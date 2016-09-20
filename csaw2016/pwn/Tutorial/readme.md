@@ -1,3 +1,5 @@
+#Tutorial
+
 3 entrées dans le menu:
 la première fournie l'adresse de puts - 0x500 dans la libc.
 La deuxième commande permet d'avoir une fuite en faisant un overflow de 312
@@ -5,6 +7,7 @@ caractères (dont le \n) et d'obtenir le canari. Il ne reste plus qu'à
 enchainer un rop classique effectuant deux dup2 et un system('/bin/sh')
 pour avoir le shell. Cela donne la session suivante:
 
+```
 francois@athos:~/BFF/beers4flags/writeups/csaw2016/pwn/Tutorial$ python exploit-0.py 1
 (1) -Tutorial-
 1.Manual
@@ -108,3 +111,4 @@ cat flag.txt
     chaine=raw_input(">")
 EOFError
 francois@athos:~/BFF/beers4flags/writeups/csaw2016/pwn/Tutorial$ 
+```
