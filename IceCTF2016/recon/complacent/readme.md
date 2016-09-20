@@ -16,4 +16,5 @@ nikto -h https://complacent.vuln.icec.tf
 ```
                    
 Flag was in SSL Certificate
+
 The flag is : IceCTF{this_1nformation_wasnt_h1dd3n_at_a11}
