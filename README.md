@@ -4,4 +4,11 @@ Beers4Flags WU
 
 ### For members:
 
-One folder by CTF, one folder by chall
+File organization
+```
+CTFNAME-DATE
+-- categorie
+---- challenge name
+------README.md
+------Others files
+```
