@@ -1,9 +1,6 @@
 # Over the Hill (Cryptography · 65 pt)
 
 
-Voir le script:  python hill.py 
-Le flag est : IceCTF{linear_algebra_plus_led_zeppelin_are_a_beautiful_m1xture}
-
 Explicit title, and nice song by the way :D Hill Matrix http://www.dcode.fr/chiffre-hill
 
 Got all details in the file : * alphabet * ciphertext * Matrice
@@ -11,7 +8,7 @@ Got all details in the file : * alphabet * ciphertext * Matrice
 I used that WU to solve it https://github.com/ctfs/write-ups-2015/blob/master/ghost-in-the-shellcode-2015/crypto/nikoli/hilly.py
 
 
-```python
+```Python
 import numpy as np
 global debug,alphabet,alphsize
 debug=0
@@ -94,7 +91,6 @@ matrix = [[54, 53, 28, 20, 54, 15, 12, 7],
 
 ciphertext = "7Nv7}dI9hD9qGmP}CR_5wJDdkj4CKxd45rko1cj51DpHPnNDb__EXDotSRCP8ZCQ"
 print decrypt(ciphertext,matrix,8)
-
 `̀ `
 
 The flag is : IceCTF{linear_algebra_plus_led_zeppelin_are_a_beautiful_m1xture}
