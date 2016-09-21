@@ -1,10 +1,4 @@
----
-layout: post
-title: "IceCTF 2016 Blue Monday"
-date: 2016-09-20 13:00:00 +0200
-comments: true
-categories: wu
----
+# bluemonday (forensic · 60 pt)
 
 Those who came before me lived through their vocations From the past until completion, 
 they'll turn away no more And still I find it so hard to say what I need to say 
@@ -143,15 +137,9 @@ file .csv
 0, 0, End_of_file
 ```
 
-
-
 conversion from decimal to ascii : 
-
 
 IceCTF{HAck1n9_mU5Ic_W17h_mID15_L3t5_H4vE_a_r4v3}
 
-
-flagged
-
-eilco.
+eilco
 

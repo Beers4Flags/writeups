@@ -1,0 +1,29 @@
+# substituted (crypto · 30 pt)
+
+We got a substitute flag, I hear they are pretty lax on the rules…
+
+̀```
+Lw!
+
+Gyzvecy ke WvyVKT!
+
+W'zz by reso dsbdkwksky tzjq teo kly ujr. Teo keujr, gy joy dksurwmq bjdwv vorakeqojalr jmu wkd jaazwvjkwemd.
+Vorakeqojalr ljd j zemq lwdkeor, jzklesql gwkl kly juxymk et vecaskyod wk ljd qekkym oyjzzr vecazwvjkyu.
+Decy dwcazy ezu vwalyod joy kly Vjydjo vwalyo, kly Xwqymyoy vwalyo, kly dsbdkwkskwem vwalyo, glwvl wd klwd emy, jmu de em.
+Jzcedk jzz et klydy vwalyod joy yjdwzr boeiym keujr gwkl kly lyza et vecaskyod.
+Decy myg ymvorakwem cykleud joy JYD, kly vsooymk dkjmujou teo ymvorakwem, jzemq gwkl ODJ.
+Vorakeqojalr wd j xjdk twyzu jmu wd xyor wmkyoydkwmq klesql.
+De iwvi bjvi, oyju sa em decy veez vwalyod jmu ljxy tsm!
+
+El jmu teo reso oyveoud cr mjcy wd WvyVKT{jzgjrd_zwdkym_ke_reso_dsbdkwksky_tzjqd}.
+```
+
+I tried to find a know substutituion method but it failed, so I determined following thing :
+
+̀```
+WvyVKT = IceCTF 
+```
+
+From this, I gather that Gyzvecy was “Welcome”, then by hand i found flag IceCTF{always_listen_to_your_substitute_flags}
+
+By eilco
