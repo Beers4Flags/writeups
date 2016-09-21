@@ -108,7 +108,7 @@ I've remove all duplicate line and colonne and I have added some '0' in front of
 et j'ai rajouté des 0 devant les valeur hexa ne faisant pas 33 caracteres
 
 
-![Alt](matrix3.png "it looks better")
+![Alt](matrix2.png "it looks better")
 
 and seems to  respect QRCODE rules. Let's check it on : https://zxing.org/w/decode
 
