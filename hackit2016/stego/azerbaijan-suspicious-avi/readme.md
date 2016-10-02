@@ -52,11 +52,11 @@ done
 
 The result is a comparison of the two other, we look the new images and ... a good surprise on image : compared_00057406.png
 
-We can see a red line at the top of the image. Hum hum probably the stegano with LSB :-)
+We can see a red line at the top of the image.
 
 ![Alt](compared_00057406.png "compared_00057406.png")
 
-Then a big thank you to our teammate Phenol for his script on LSB (See h4ck1t_pepapig.py)
+Then a big thank you to our teammate Phenol for his script. (See h4ck1t_pepapig.py)
 
 ```Python
 #!/usr/bin/env python
@@ -64,7 +64,7 @@ Then a big thank you to our teammate Phenol for his script on LSB (See h4ck1t_pe
 import sys
 import cv2
 
-#./h4ck1t_pepapig.py vidz.png rgb 8 1 464
+#./h4ck1t_pepapig.py 468 rgb
 
 def recompose(lsb_str, byte_len):
     byte_lst = []
@@ -87,28 +87,12 @@ def compare(maxpx, ch):
                 else:
                     return bit_str
 
-nbcol = int(sys.argv[4])
+maxpx = int(sys.argv[1])
 chan = { 'r' : 2, 'g' : 1, 'b' : 0, 'a' : 3 }
 ch = [ chan[sys.argv[2][i]] for i in range(0,len(sys.argv[2]))]
-maxpx = int(sys.argv[5])
-bytelen = int(sys.argv[3])
-
 bit_str = compare(maxpx, ch)
-print bit_str
-print recompose(bit_str,bytelen)
+print recompose(bit_str,8)
 
-lsb_str = ""
-img = cv2.imread(sys.argv[1])
-line, cols, bands = img.shape
-for x in range(0, line):
-    for y in range(0,cols, nbcol):
-        for z in ch:
-            if x*y > maxpx:
-                break
-            lsb_str += str(img[x,y,z] & 1)
-print lsb_str
-found = recompose(lsb_str,bytelen)
-print found
 ```
 
 Through its scripts, we can see brainfuck on image compared
