@@ -1,0 +1,698 @@
+ASSIGN var0 false
+ISSET_ISEMPTY_VAR 5 ~1 var1
+JMPZ ~1 ->5
+ASSIGN var0 true
+JMP ->6
+BRK 1 ->695
+ASSIGN var2 false
+SEND_VAR var1
+SEND_VAL 'The'
+DO_FCALL 2 tempvar4 'strstr'
+JMPZ_EX ~5 tempvar4 ->16
+SEND_VAR var1
+SEND_VAL 'The'
+DO_FCALL 2 tempvar6 'strpos'
+IS_EQUAL ~7 tempvar6 0
+BOOL ~5 ~7
+JMPZ ~5 ->19
+ASSIGN var2 true
+JMP ->19
+FETCH_DIM_R tempvar9 var1 0
+SEND_VAR tempvar9
+DO_FCALL 1 tempvar10 'ord'
+ADD ~11 tempvar10 20
+SEND_VAL ~11
+DO_FCALL 1 tempvar12 'chr'
+ASSIGN var3 tempvar12
+SEND_VAR var3
+DO_FCALL 1 tempvar14 'ord'
+ADD ~15 tempvar14 -20
+IS_NOT_EQUAL ~16 ~15 84
+JMPZ ~16 ->34
+UNSET_VAR var3
+BRK 1 ->695
+JMP ->34
+FETCH_DIM_R tempvar17 var1 1
+SEND_VAR tempvar17
+DO_FCALL 1 tempvar18 'ord'
+ADD ~19 tempvar18 -52
+SEND_VAL ~19
+DO_FCALL 1 tempvar20 'chr'
+ASSIGN var4 tempvar20
+SEND_VAR var4
+DO_FCALL 1 tempvar22 'ord'
+ADD ~23 tempvar22 52
+IS_NOT_EQUAL ~24 ~23 104
+JMPZ ~24 ->49
+UNSET_VAR var4
+BRK 1 ->695
+JMP ->49
+FETCH_DIM_R tempvar25 var1 2
+SEND_VAR tempvar25
+DO_FCALL 1 tempvar26 'ord'
+ADD ~27 tempvar26 -2
+SEND_VAL ~27
+DO_FCALL 1 tempvar28 'chr'
+ASSIGN var5 tempvar28
+SEND_VAR var5
+DO_FCALL 1 tempvar30 'ord'
+ADD ~31 tempvar30 2
+IS_NOT_EQUAL ~32 ~31 101
+JMPZ ~32 ->64
+UNSET_VAR var5
+BRK 1 ->695
+JMP ->64
+FETCH_DIM_R tempvar33 var1 3
+SEND_VAR tempvar33
+DO_FCALL 1 tempvar34 'ord'
+ADD ~35 tempvar34 -7
+SEND_VAL ~35
+DO_FCALL 1 tempvar36 'chr'
+ASSIGN var6 tempvar36
+SEND_VAR var6
+DO_FCALL 1 tempvar38 'ord'
+ADD ~39 tempvar38 7
+IS_NOT_EQUAL ~40 ~39 114
+JMPZ ~40 ->79
+UNSET_VAR var6
+BRK 1 ->695
+JMP ->79
+FETCH_DIM_R tempvar41 var1 4
+SEND_VAR tempvar41
+DO_FCALL 1 tempvar42 'ord'
+ADD ~43 tempvar42 -52
+SEND_VAL ~43
+DO_FCALL 1 tempvar44 'chr'
+ASSIGN var7 tempvar44
+SEND_VAR var7
+DO_FCALL 1 tempvar46 'ord'
+ADD ~47 tempvar46 52
+IS_NOT_EQUAL ~48 ~47 101
+JMPZ ~48 ->94
+UNSET_VAR var7
+BRK 1 ->695
+JMP ->94
+FETCH_DIM_R tempvar49 var1 5
+SEND_VAR tempvar49
+DO_FCALL 1 tempvar50 'ord'
+ADD ~51 tempvar50 43
+SEND_VAL ~51
+DO_FCALL 1 tempvar52 'chr'
+ASSIGN var8 tempvar52
+SEND_VAR var8
+DO_FCALL 1 tempvar54 'ord'
+ADD ~55 tempvar54 -43
+IS_NOT_EQUAL ~56 ~55 73
+JMPZ ~56 ->109
+UNSET_VAR var8
+BRK 1 ->695
+JMP ->109
+FETCH_DIM_R tempvar57 var1 6
+SEND_VAR tempvar57
+DO_FCALL 1 tempvar58 'ord'
+ADD ~59 tempvar58 8
+SEND_VAL ~59
+DO_FCALL 1 tempvar60 'chr'
+ASSIGN var9 tempvar60
+SEND_VAR var9
+DO_FCALL 1 tempvar62 'ord'
+ADD ~63 tempvar62 -8
+IS_NOT_EQUAL ~64 ~63 115
+JMPZ ~64 ->124
+UNSET_VAR var9
+BRK 1 ->695
+JMP ->124
+FETCH_DIM_R tempvar65 var1 7
+SEND_VAR tempvar65
+DO_FCALL 1 tempvar66 'ord'
+ADD ~67 tempvar66 1
+SEND_VAL ~67
+DO_FCALL 1 tempvar68 'chr'
+ASSIGN var10 tempvar68
+SEND_VAR var10
+DO_FCALL 1 tempvar70 'ord'
+ADD ~71 tempvar70 -1
+IS_NOT_EQUAL ~72 ~71 78
+JMPZ ~72 ->139
+UNSET_VAR var10
+BRK 1 ->695
+JMP ->139
+FETCH_DIM_R tempvar73 var1 8
+SEND_VAR tempvar73
+DO_FCALL 1 tempvar74 'ord'
+ADD ~75 tempvar74 -63
+SEND_VAL ~75
+DO_FCALL 1 tempvar76 'chr'
+ASSIGN var11 tempvar76
+SEND_VAR var11
+DO_FCALL 1 tempvar78 'ord'
+ADD ~79 tempvar78 63
+IS_NOT_EQUAL ~80 ~79 111
+JMPZ ~80 ->154
+UNSET_VAR var11
+BRK 1 ->695
+JMP ->154
+FETCH_DIM_R tempvar81 var1 9
+SEND_VAR tempvar81
+DO_FCALL 1 tempvar82 'ord'
+ADD ~83 tempvar82 22
+SEND_VAL ~83
+DO_FCALL 1 tempvar84 'chr'
+ASSIGN var12 tempvar84
+SEND_VAR var12
+DO_FCALL 1 tempvar86 'ord'
+ADD ~87 tempvar86 -22
+IS_NOT_EQUAL ~88 ~87 82
+JMPZ ~88 ->169
+UNSET_VAR var12
+BRK 1 ->695
+JMP ->169
+FETCH_DIM_R tempvar89 var1 10
+SEND_VAR tempvar89
+DO_FCALL 1 tempvar90 'ord'
+ADD ~91 tempvar90 -10
+SEND_VAL ~91
+DO_FCALL 1 tempvar92 'chr'
+ASSIGN var13 tempvar92
+SEND_VAR var13
+DO_FCALL 1 tempvar94 'ord'
+ADD ~95 tempvar94 10
+IS_NOT_EQUAL ~96 ~95 105
+JMPZ ~96 ->184
+UNSET_VAR var13
+BRK 1 ->695
+JMP ->184
+FETCH_DIM_R tempvar97 var1 11
+SEND_VAR tempvar97
+DO_FCALL 1 tempvar98 'ord'
+ADD ~99 tempvar98 -55
+SEND_VAL ~99
+DO_FCALL 1 tempvar100 'chr'
+ASSIGN var14 tempvar100
+SEND_VAR var14
+DO_FCALL 1 tempvar102 'ord'
+ADD ~103 tempvar102 55
+IS_NOT_EQUAL ~104 ~103 103
+JMPZ ~104 ->199
+UNSET_VAR var14
+BRK 1 ->695
+JMP ->199
+FETCH_DIM_R tempvar105 var1 12
+SEND_VAR tempvar105
+DO_FCALL 1 tempvar106 'ord'
+ADD ~107 tempvar106 8
+SEND_VAL ~107
+DO_FCALL 1 tempvar108 'chr'
+ASSIGN var15 tempvar108
+SEND_VAR var15
+DO_FCALL 1 tempvar110 'ord'
+ADD ~111 tempvar110 -8
+IS_NOT_EQUAL ~112 ~111 104
+JMPZ ~112 ->214
+UNSET_VAR var15
+BRK 1 ->695
+JMP ->214
+FETCH_DIM_R tempvar113 var1 13
+SEND_VAR tempvar113
+DO_FCALL 1 tempvar114 'ord'
+ADD ~115 tempvar114 -49
+SEND_VAL ~115
+DO_FCALL 1 tempvar116 'chr'
+ASSIGN var16 tempvar116
+SEND_VAR var16
+DO_FCALL 1 tempvar118 'ord'
+ADD ~119 tempvar118 49
+IS_NOT_EQUAL ~120 ~119 116
+JMPZ ~120 ->229
+UNSET_VAR var16
+BRK 1 ->695
+JMP ->229
+FETCH_DIM_R tempvar121 var1 14
+SEND_VAR tempvar121
+DO_FCALL 1 tempvar122 'ord'
+ADD ~123 tempvar122 -17
+SEND_VAL ~123
+DO_FCALL 1 tempvar124 'chr'
+ASSIGN var17 tempvar124
+SEND_VAR var17
+DO_FCALL 1 tempvar126 'ord'
+ADD ~127 tempvar126 17
+IS_NOT_EQUAL ~128 ~127 65
+JMPZ ~128 ->244
+UNSET_VAR var17
+BRK 1 ->695
+JMP ->244
+FETCH_DIM_R tempvar129 var1 15
+SEND_VAR tempvar129
+DO_FCALL 1 tempvar130 'ord'
+ADD ~131 tempvar130 -42
+SEND_VAL ~131
+DO_FCALL 1 tempvar132 'chr'
+ASSIGN var18 tempvar132
+SEND_VAR var18
+DO_FCALL 1 tempvar134 'ord'
+ADD ~135 tempvar134 42
+IS_NOT_EQUAL ~136 ~135 110
+JMPZ ~136 ->259
+UNSET_VAR var18
+BRK 1 ->695
+JMP ->259
+FETCH_DIM_R tempvar137 var1 16
+SEND_VAR tempvar137
+DO_FCALL 1 tempvar138 'ord'
+ADD ~139 tempvar138 -49
+SEND_VAL ~139
+DO_FCALL 1 tempvar140 'chr'
+ASSIGN var19 tempvar140
+SEND_VAR var19
+DO_FCALL 1 tempvar142 'ord'
+ADD ~143 tempvar142 49
+IS_NOT_EQUAL ~144 ~143 100
+JMPZ ~144 ->274
+UNSET_VAR var19
+BRK 1 ->695
+JMP ->274
+FETCH_DIM_R tempvar145 var1 17
+SEND_VAR tempvar145
+DO_FCALL 1 tempvar146 'ord'
+ADD ~147 tempvar146 -34
+SEND_VAL ~147
+DO_FCALL 1 tempvar148 'chr'
+ASSIGN var20 tempvar148
+SEND_VAR var20
+DO_FCALL 1 tempvar150 'ord'
+ADD ~151 tempvar150 34
+IS_NOT_EQUAL ~152 ~151 87
+JMPZ ~152 ->289
+UNSET_VAR var20
+BRK 1 ->695
+JMP ->289
+FETCH_DIM_R tempvar153 var1 18
+SEND_VAR tempvar153
+DO_FCALL 1 tempvar154 'ord'
+ADD ~155 tempvar154 -19
+SEND_VAL ~155
+DO_FCALL 1 tempvar156 'chr'
+ASSIGN var21 tempvar156
+SEND_VAR var21
+DO_FCALL 1 tempvar158 'ord'
+ADD ~159 tempvar158 19
+IS_NOT_EQUAL ~160 ~159 114
+JMPZ ~160 ->304
+UNSET_VAR var21
+BRK 1 ->695
+JMP ->304
+FETCH_DIM_R tempvar161 var1 19
+SEND_VAR tempvar161
+DO_FCALL 1 tempvar162 'ord'
+ADD ~163 tempvar162 -40
+SEND_VAL ~163
+DO_FCALL 1 tempvar164 'chr'
+ASSIGN var22 tempvar164
+SEND_VAR var22
+DO_FCALL 1 tempvar166 'ord'
+ADD ~167 tempvar166 40
+IS_NOT_EQUAL ~168 ~167 111
+JMPZ ~168 ->319
+UNSET_VAR var22
+BRK 1 ->695
+JMP ->319
+FETCH_DIM_R tempvar169 var1 20
+SEND_VAR tempvar169
+DO_FCALL 1 tempvar170 'ord'
+ADD ~171 tempvar170 -62
+SEND_VAL ~171
+DO_FCALL 1 tempvar172 'chr'
+ASSIGN var23 tempvar172
+SEND_VAR var23
+DO_FCALL 1 tempvar174 'ord'
+ADD ~175 tempvar174 62
+IS_NOT_EQUAL ~176 ~175 110
+JMPZ ~176 ->334
+UNSET_VAR var23
+BRK 1 ->695
+JMP ->334
+FETCH_DIM_R tempvar177 var1 21
+SEND_VAR tempvar177
+DO_FCALL 1 tempvar178 'ord'
+ADD ~179 tempvar178 13
+SEND_VAL ~179
+DO_FCALL 1 tempvar180 'chr'
+ASSIGN var24 tempvar180
+SEND_VAR var24
+DO_FCALL 1 tempvar182 'ord'
+ADD ~183 tempvar182 -13
+IS_NOT_EQUAL ~184 ~183 103
+JMPZ ~184 ->349
+UNSET_VAR var24
+BRK 1 ->695
+JMP ->349
+FETCH_DIM_R tempvar185 var1 22
+SEND_VAR tempvar185
+DO_FCALL 1 tempvar186 'ord'
+ADD ~187 tempvar186 49
+SEND_VAL ~187
+DO_FCALL 1 tempvar188 'chr'
+ASSIGN var25 tempvar188
+SEND_VAR var25
+DO_FCALL 1 tempvar190 'ord'
+ADD ~191 tempvar190 -49
+IS_NOT_EQUAL ~192 ~191 46
+JMPZ ~192 ->364
+UNSET_VAR var25
+BRK 1 ->695
+JMP ->364
+FETCH_DIM_R tempvar193 var1 23
+SEND_VAR tempvar193
+DO_FCALL 1 tempvar194 'ord'
+ADD ~195 tempvar194 -35
+SEND_VAL ~195
+DO_FCALL 1 tempvar196 'chr'
+ASSIGN var26 tempvar196
+SEND_VAR var26
+DO_FCALL 1 tempvar198 'ord'
+ADD ~199 tempvar198 35
+IS_NOT_EQUAL ~200 ~199 84
+JMPZ ~200 ->379
+UNSET_VAR var26
+BRK 1 ->695
+JMP ->379
+FETCH_DIM_R tempvar201 var1 24
+SEND_VAR tempvar201
+DO_FCALL 1 tempvar202 'ord'
+ADD ~203 tempvar202 -26
+SEND_VAL ~203
+DO_FCALL 1 tempvar204 'chr'
+ASSIGN var27 tempvar204
+SEND_VAR var27
+DO_FCALL 1 tempvar206 'ord'
+ADD ~207 tempvar206 26
+IS_NOT_EQUAL ~208 ~207 104
+JMPZ ~208 ->394
+UNSET_VAR var27
+BRK 1 ->695
+JMP ->394
+FETCH_DIM_R tempvar209 var1 25
+SEND_VAR tempvar209
+DO_FCALL 1 tempvar210 'ord'
+ADD ~211 tempvar210 -48
+SEND_VAL ~211
+DO_FCALL 1 tempvar212 'chr'
+ASSIGN var28 tempvar212
+SEND_VAR var28
+DO_FCALL 1 tempvar214 'ord'
+ADD ~215 tempvar214 48
+IS_NOT_EQUAL ~216 ~215 101
+JMPZ ~216 ->409
+UNSET_VAR var28
+BRK 1 ->695
+JMP ->409
+FETCH_DIM_R tempvar217 var1 26
+SEND_VAR tempvar217
+DO_FCALL 1 tempvar218 'ord'
+ADD ~219 tempvar218 -65
+SEND_VAL ~219
+DO_FCALL 1 tempvar220 'chr'
+ASSIGN var29 tempvar220
+SEND_VAR var29
+DO_FCALL 1 tempvar222 'ord'
+ADD ~223 tempvar222 65
+IS_NOT_EQUAL ~224 ~223 114
+JMPZ ~224 ->424
+UNSET_VAR var29
+BRK 1 ->695
+JMP ->424
+FETCH_DIM_R tempvar225 var1 27
+SEND_VAR tempvar225
+DO_FCALL 1 tempvar226 'ord'
+ADD ~227 tempvar226 -33
+SEND_VAL ~227
+DO_FCALL 1 tempvar228 'chr'
+ASSIGN var30 tempvar228
+SEND_VAR var30
+DO_FCALL 1 tempvar230 'ord'
+ADD ~231 tempvar230 33
+IS_NOT_EQUAL ~232 ~231 101
+JMPZ ~232 ->439
+UNSET_VAR var30
+BRK 1 ->695
+JMP ->439
+FETCH_DIM_R tempvar233 var1 28
+SEND_VAR tempvar233
+DO_FCALL 1 tempvar234 'ord'
+ADD ~235 tempvar234 -28
+SEND_VAL ~235
+DO_FCALL 1 tempvar236 'chr'
+ASSIGN var31 tempvar236
+SEND_VAR var31
+DO_FCALL 1 tempvar238 'ord'
+ADD ~239 tempvar238 28
+IS_NOT_EQUAL ~240 ~239 79
+JMPZ ~240 ->454
+UNSET_VAR var31
+BRK 1 ->695
+JMP ->454
+FETCH_DIM_R tempvar241 var1 29
+SEND_VAR tempvar241
+DO_FCALL 1 tempvar242 'ord'
+ADD ~243 tempvar242 -15
+SEND_VAL ~243
+DO_FCALL 1 tempvar244 'chr'
+ASSIGN var32 tempvar244
+SEND_VAR var32
+DO_FCALL 1 tempvar246 'ord'
+ADD ~247 tempvar246 15
+IS_NOT_EQUAL ~248 ~247 110
+JMPZ ~248 ->469
+UNSET_VAR var32
+BRK 1 ->695
+JMP ->469
+FETCH_DIM_R tempvar249 var1 30
+SEND_VAR tempvar249
+DO_FCALL 1 tempvar250 'ord'
+ADD ~251 tempvar250 -31
+SEND_VAL ~251
+DO_FCALL 1 tempvar252 'chr'
+ASSIGN var33 tempvar252
+SEND_VAR var33
+DO_FCALL 1 tempvar254 'ord'
+ADD ~255 tempvar254 31
+IS_NOT_EQUAL ~256 ~255 108
+JMPZ ~256 ->484
+UNSET_VAR var33
+BRK 1 ->695
+JMP ->484
+FETCH_DIM_R tempvar257 var1 31
+SEND_VAR tempvar257
+DO_FCALL 1 tempvar258 'ord'
+ADD ~259 tempvar258 -16
+SEND_VAL ~259
+DO_FCALL 1 tempvar260 'chr'
+ASSIGN var34 tempvar260
+SEND_VAR var34
+DO_FCALL 1 tempvar262 'ord'
+ADD ~263 tempvar262 16
+IS_NOT_EQUAL ~264 ~263 121
+JMPZ ~264 ->499
+UNSET_VAR var34
+BRK 1 ->695
+JMP ->499
+FETCH_DIM_R tempvar265 var1 32
+SEND_VAR tempvar265
+DO_FCALL 1 tempvar266 'ord'
+ADD ~267 tempvar266 8
+SEND_VAL ~267
+DO_FCALL 1 tempvar268 'chr'
+ASSIGN var35 tempvar268
+SEND_VAR var35
+DO_FCALL 1 tempvar270 'ord'
+ADD ~271 tempvar270 -8
+IS_NOT_EQUAL ~272 ~271 70
+JMPZ ~272 ->514
+UNSET_VAR var35
+BRK 1 ->695
+JMP ->514
+FETCH_DIM_R tempvar273 var1 33
+SEND_VAR tempvar273
+DO_FCALL 1 tempvar274 'ord'
+ADD ~275 tempvar274 -66
+SEND_VAL ~275
+DO_FCALL 1 tempvar276 'chr'
+ASSIGN var36 tempvar276
+SEND_VAR var36
+DO_FCALL 1 tempvar278 'ord'
+ADD ~279 tempvar278 66
+IS_NOT_EQUAL ~280 ~279 117
+JMPZ ~280 ->529
+UNSET_VAR var36
+BRK 1 ->695
+JMP ->529
+FETCH_DIM_R tempvar281 var1 34
+SEND_VAR tempvar281
+DO_FCALL 1 tempvar282 'ord'
+ADD ~283 tempvar282 -15
+SEND_VAL ~283
+DO_FCALL 1 tempvar284 'chr'
+ASSIGN var37 tempvar284
+SEND_VAR var37
+DO_FCALL 1 tempvar286 'ord'
+ADD ~287 tempvar286 15
+IS_NOT_EQUAL ~288 ~287 110
+JMPZ ~288 ->544
+UNSET_VAR var37
+BRK 1 ->695
+JMP ->544
+FETCH_DIM_R tempvar289 var1 35
+SEND_VAR tempvar289
+DO_FCALL 1 tempvar290 'ord'
+ADD ~291 tempvar290 -12
+SEND_VAL ~291
+DO_FCALL 1 tempvar292 'chr'
+ASSIGN var38 tempvar292
+SEND_VAR var38
+DO_FCALL 1 tempvar294 'ord'
+ADD ~295 tempvar294 12
+IS_NOT_EQUAL ~296 ~295 65
+JMPZ ~296 ->559
+UNSET_VAR var38
+BRK 1 ->695
+JMP ->559
+FETCH_DIM_R tempvar297 var1 36
+SEND_VAR tempvar297
+DO_FCALL 1 tempvar298 'ord'
+ADD ~299 tempvar298 -61
+SEND_VAL ~299
+DO_FCALL 1 tempvar300 'chr'
+ASSIGN var39 tempvar300
+SEND_VAR var39
+DO_FCALL 1 tempvar302 'ord'
+ADD ~303 tempvar302 61
+IS_NOT_EQUAL ~304 ~303 110
+JMPZ ~304 ->574
+UNSET_VAR var39
+BRK 1 ->695
+JMP ->574
+FETCH_DIM_R tempvar305 var1 37
+SEND_VAR tempvar305
+DO_FCALL 1 tempvar306 'ord'
+ADD ~307 tempvar306 -33
+SEND_VAL ~307
+DO_FCALL 1 tempvar308 'chr'
+ASSIGN var40 tempvar308
+SEND_VAR var40
+DO_FCALL 1 tempvar310 'ord'
+ADD ~311 tempvar310 33
+IS_NOT_EQUAL ~312 ~311 100
+JMPZ ~312 ->589
+UNSET_VAR var40
+BRK 1 ->695
+JMP ->589
+FETCH_DIM_R tempvar313 var1 38
+SEND_VAR tempvar313
+DO_FCALL 1 tempvar314 'ord'
+ADD ~315 tempvar314 9
+SEND_VAL ~315
+DO_FCALL 1 tempvar316 'chr'
+ASSIGN var41 tempvar316
+SEND_VAR var41
+DO_FCALL 1 tempvar318 'ord'
+ADD ~319 tempvar318 -9
+IS_NOT_EQUAL ~320 ~319 66
+JMPZ ~320 ->604
+UNSET_VAR var41
+BRK 1 ->695
+JMP ->604
+FETCH_DIM_R tempvar321 var1 39
+SEND_VAR tempvar321
+DO_FCALL 1 tempvar322 'ord'
+ADD ~323 tempvar322 -16
+SEND_VAL ~323
+DO_FCALL 1 tempvar324 'chr'
+ASSIGN var42 tempvar324
+SEND_VAR var42
+DO_FCALL 1 tempvar326 'ord'
+ADD ~327 tempvar326 16
+IS_NOT_EQUAL ~328 ~327 111
+JMPZ ~328 ->619
+UNSET_VAR var42
+BRK 1 ->695
+JMP ->619
+FETCH_DIM_R tempvar329 var1 40
+SEND_VAR tempvar329
+DO_FCALL 1 tempvar330 'ord'
+ADD ~331 tempvar330 -37
+SEND_VAL ~331
+DO_FCALL 1 tempvar332 'chr'
+ASSIGN var43 tempvar332
+SEND_VAR var43
+DO_FCALL 1 tempvar334 'ord'
+ADD ~335 tempvar334 37
+IS_NOT_EQUAL ~336 ~335 114
+JMPZ ~336 ->634
+UNSET_VAR var43
+BRK 1 ->695
+JMP ->634
+FETCH_DIM_R tempvar337 var1 41
+SEND_VAR tempvar337
+DO_FCALL 1 tempvar338 'ord'
+ADD ~339 tempvar338 -56
+SEND_VAL ~339
+DO_FCALL 1 tempvar340 'chr'
+ASSIGN var44 tempvar340
+SEND_VAR var44
+DO_FCALL 1 tempvar342 'ord'
+ADD ~343 tempvar342 56
+IS_NOT_EQUAL ~344 ~343 105
+JMPZ ~344 ->649
+UNSET_VAR var44
+BRK 1 ->695
+JMP ->649
+FETCH_DIM_R tempvar345 var1 42
+SEND_VAR tempvar345
+DO_FCALL 1 tempvar346 'ord'
+ADD ~347 tempvar346 0
+SEND_VAL ~347
+DO_FCALL 1 tempvar348 'chr'
+ASSIGN var45 tempvar348
+SEND_VAR var45
+DO_FCALL 1 tempvar350 'ord'
+ADD ~351 tempvar350 0
+IS_NOT_EQUAL ~352 ~351 110
+JMPZ ~352 ->664
+UNSET_VAR var45
+BRK 1 ->695
+JMP ->664
+FETCH_DIM_R tempvar353 var1 43
+SEND_VAR tempvar353
+DO_FCALL 1 tempvar354 'ord'
+ADD ~355 tempvar354 -35
+SEND_VAL ~355
+DO_FCALL 1 tempvar356 'chr'
+ASSIGN var46 tempvar356
+SEND_VAR var46
+DO_FCALL 1 tempvar358 'ord'
+ADD ~359 tempvar358 35
+IS_NOT_EQUAL ~360 ~359 103
+JMPZ ~360 ->679
+UNSET_VAR var46
+BRK 1 ->695
+JMP ->679
+FETCH_DIM_R tempvar361 var1 44
+SEND_VAR tempvar361
+DO_FCALL 1 tempvar362 'ord'
+ADD ~363 tempvar362 79
+SEND_VAL ~363
+DO_FCALL 1 tempvar364 'chr'
+ASSIGN var47 tempvar364
+SEND_VAR var47
+DO_FCALL 1 tempvar366 'ord'
+ADD ~367 tempvar366 -79
+IS_NOT_EQUAL ~368 ~367 46
+JMPZ ~368 ->694
+UNSET_VAR var47
+BRK 1 ->695
+JMP ->694
+JMPNZ false ->0
+RETURN 1
+
+

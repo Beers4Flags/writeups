@@ -1,0 +1,698 @@
+ASSIGN var0 false
+ISSETISEMPTYVAR 5 ~1 var1
+JMPZ ~1 ->5
+ASSIGN var0 true
+JMP ->6
+BRK 1 ->695
+ASSIGN var2 false
+SENDVAR var1
+SENDVAL 'The'
+DOFCALL 2 tempvar4 'strstr'
+JMPZEX ~5 tempvar4 ->16
+SENDVAR var1
+SENDVAL 'The'
+DOFCALL 2 tempvar6 'strpos'
+ISEQUAL ~7 tempvar6 0
+BOOL ~5 ~7
+JMPZ ~5 ->19
+ASSIGN var2 true
+JMP ->19
+FETCHDIMR tempvar9 var1 0
+SENDVAR tempvar9
+DOFCALL 1 tempvar10 'ord'
+ADD ~11 tempvar10 20
+SENDVAL ~11
+DOFCALL 1 tempvar12 'chr'
+ASSIGN var3 tempvar12
+SENDVAR var3
+DOFCALL 1 tempvar14 'ord'
+ADD ~15 tempvar14 -20
+ISNOTEQUAL ~16 ~15 84
+JMPZ ~16 ->34
+UNSETVAR var3
+BRK 1 ->695
+JMP ->34
+FETCHDIMR tempvar17 var1 1
+SENDVAR tempvar17
+DOFCALL 1 tempvar18 'ord'
+ADD ~19 tempvar18 -52
+SENDVAL ~19
+DOFCALL 1 tempvar20 'chr'
+ASSIGN var4 tempvar20
+SENDVAR var4
+DOFCALL 1 tempvar22 'ord'
+ADD ~23 tempvar22 52
+ISNOTEQUAL ~24 ~23 104
+JMPZ ~24 ->49
+UNSETVAR var4
+BRK 1 ->695
+JMP ->49
+FETCHDIMR tempvar25 var1 2
+SENDVAR tempvar25
+DOFCALL 1 tempvar26 'ord'
+ADD ~27 tempvar26 -2
+SENDVAL ~27
+DOFCALL 1 tempvar28 'chr'
+ASSIGN var5 tempvar28
+SENDVAR var5
+DOFCALL 1 tempvar30 'ord'
+ADD ~31 tempvar30 2
+ISNOTEQUAL ~32 ~31 101
+JMPZ ~32 ->64
+UNSETVAR var5
+BRK 1 ->695
+JMP ->64
+FETCHDIMR tempvar33 var1 3
+SENDVAR tempvar33
+DOFCALL 1 tempvar34 'ord'
+ADD ~35 tempvar34 -7
+SENDVAL ~35
+DOFCALL 1 tempvar36 'chr'
+ASSIGN var6 tempvar36
+SENDVAR var6
+DOFCALL 1 tempvar38 'ord'
+ADD ~39 tempvar38 7
+ISNOTEQUAL ~40 ~39 114
+JMPZ ~40 ->79
+UNSETVAR var6
+BRK 1 ->695
+JMP ->79
+FETCHDIMR tempvar41 var1 4
+SENDVAR tempvar41
+DOFCALL 1 tempvar42 'ord'
+ADD ~43 tempvar42 -52
+SENDVAL ~43
+DOFCALL 1 tempvar44 'chr'
+ASSIGN var7 tempvar44
+SENDVAR var7
+DOFCALL 1 tempvar46 'ord'
+ADD ~47 tempvar46 52
+ISNOTEQUAL ~48 ~47 101
+JMPZ ~48 ->94
+UNSETVAR var7
+BRK 1 ->695
+JMP ->94
+FETCHDIMR tempvar49 var1 5
+SENDVAR tempvar49
+DOFCALL 1 tempvar50 'ord'
+ADD ~51 tempvar50 43
+SENDVAL ~51
+DOFCALL 1 tempvar52 'chr'
+ASSIGN var8 tempvar52
+SENDVAR var8
+DOFCALL 1 tempvar54 'ord'
+ADD ~55 tempvar54 -43
+ISNOTEQUAL ~56 ~55 73
+JMPZ ~56 ->109
+UNSETVAR var8
+BRK 1 ->695
+JMP ->109
+FETCHDIMR tempvar57 var1 6
+SENDVAR tempvar57
+DOFCALL 1 tempvar58 'ord'
+ADD ~59 tempvar58 8
+SENDVAL ~59
+DOFCALL 1 tempvar60 'chr'
+ASSIGN var9 tempvar60
+SENDVAR var9
+DOFCALL 1 tempvar62 'ord'
+ADD ~63 tempvar62 -8
+ISNOTEQUAL ~64 ~63 115
+JMPZ ~64 ->124
+UNSETVAR var9
+BRK 1 ->695
+JMP ->124
+FETCHDIMR tempvar65 var1 7
+SENDVAR tempvar65
+DOFCALL 1 tempvar66 'ord'
+ADD ~67 tempvar66 1
+SENDVAL ~67
+DOFCALL 1 tempvar68 'chr'
+ASSIGN var10 tempvar68
+SENDVAR var10
+DOFCALL 1 tempvar70 'ord'
+ADD ~71 tempvar70 -1
+ISNOTEQUAL ~72 ~71 78
+JMPZ ~72 ->139
+UNSETVAR var10
+BRK 1 ->695
+JMP ->139
+FETCHDIMR tempvar73 var1 8
+SENDVAR tempvar73
+DOFCALL 1 tempvar74 'ord'
+ADD ~75 tempvar74 -63
+SENDVAL ~75
+DOFCALL 1 tempvar76 'chr'
+ASSIGN var11 tempvar76
+SENDVAR var11
+DOFCALL 1 tempvar78 'ord'
+ADD ~79 tempvar78 63
+ISNOTEQUAL ~80 ~79 111
+JMPZ ~80 ->154
+UNSETVAR var11
+BRK 1 ->695
+JMP ->154
+FETCHDIMR tempvar81 var1 9
+SENDVAR tempvar81
+DOFCALL 1 tempvar82 'ord'
+ADD ~83 tempvar82 22
+SENDVAL ~83
+DOFCALL 1 tempvar84 'chr'
+ASSIGN var12 tempvar84
+SENDVAR var12
+DOFCALL 1 tempvar86 'ord'
+ADD ~87 tempvar86 -22
+ISNOTEQUAL ~88 ~87 82
+JMPZ ~88 ->169
+UNSETVAR var12
+BRK 1 ->695
+JMP ->169
+FETCHDIMR tempvar89 var1 10
+SENDVAR tempvar89
+DOFCALL 1 tempvar90 'ord'
+ADD ~91 tempvar90 -10
+SENDVAL ~91
+DOFCALL 1 tempvar92 'chr'
+ASSIGN var13 tempvar92
+SENDVAR var13
+DOFCALL 1 tempvar94 'ord'
+ADD ~95 tempvar94 10
+ISNOTEQUAL ~96 ~95 105
+JMPZ ~96 ->184
+UNSETVAR var13
+BRK 1 ->695
+JMP ->184
+FETCHDIMR tempvar97 var1 11
+SENDVAR tempvar97
+DOFCALL 1 tempvar98 'ord'
+ADD ~99 tempvar98 -55
+SENDVAL ~99
+DOFCALL 1 tempvar100 'chr'
+ASSIGN var14 tempvar100
+SENDVAR var14
+DOFCALL 1 tempvar102 'ord'
+ADD ~103 tempvar102 55
+ISNOTEQUAL ~104 ~103 103
+JMPZ ~104 ->199
+UNSETVAR var14
+BRK 1 ->695
+JMP ->199
+FETCHDIMR tempvar105 var1 12
+SENDVAR tempvar105
+DOFCALL 1 tempvar106 'ord'
+ADD ~107 tempvar106 8
+SENDVAL ~107
+DOFCALL 1 tempvar108 'chr'
+ASSIGN var15 tempvar108
+SENDVAR var15
+DOFCALL 1 tempvar110 'ord'
+ADD ~111 tempvar110 -8
+ISNOTEQUAL ~112 ~111 104
+JMPZ ~112 ->214
+UNSETVAR var15
+BRK 1 ->695
+JMP ->214
+FETCHDIMR tempvar113 var1 13
+SENDVAR tempvar113
+DOFCALL 1 tempvar114 'ord'
+ADD ~115 tempvar114 -49
+SENDVAL ~115
+DOFCALL 1 tempvar116 'chr'
+ASSIGN var16 tempvar116
+SENDVAR var16
+DOFCALL 1 tempvar118 'ord'
+ADD ~119 tempvar118 49
+ISNOTEQUAL ~120 ~119 116
+JMPZ ~120 ->229
+UNSETVAR var16
+BRK 1 ->695
+JMP ->229
+FETCHDIMR tempvar121 var1 14
+SENDVAR tempvar121
+DOFCALL 1 tempvar122 'ord'
+ADD ~123 tempvar122 -17
+SENDVAL ~123
+DOFCALL 1 tempvar124 'chr'
+ASSIGN var17 tempvar124
+SENDVAR var17
+DOFCALL 1 tempvar126 'ord'
+ADD ~127 tempvar126 17
+ISNOTEQUAL ~128 ~127 65
+JMPZ ~128 ->244
+UNSETVAR var17
+BRK 1 ->695
+JMP ->244
+FETCHDIMR tempvar129 var1 15
+SENDVAR tempvar129
+DOFCALL 1 tempvar130 'ord'
+ADD ~131 tempvar130 -42
+SENDVAL ~131
+DOFCALL 1 tempvar132 'chr'
+ASSIGN var18 tempvar132
+SENDVAR var18
+DOFCALL 1 tempvar134 'ord'
+ADD ~135 tempvar134 42
+ISNOTEQUAL ~136 ~135 110
+JMPZ ~136 ->259
+UNSETVAR var18
+BRK 1 ->695
+JMP ->259
+FETCHDIMR tempvar137 var1 16
+SENDVAR tempvar137
+DOFCALL 1 tempvar138 'ord'
+ADD ~139 tempvar138 -49
+SENDVAL ~139
+DOFCALL 1 tempvar140 'chr'
+ASSIGN var19 tempvar140
+SENDVAR var19
+DOFCALL 1 tempvar142 'ord'
+ADD ~143 tempvar142 49
+ISNOTEQUAL ~144 ~143 100
+JMPZ ~144 ->274
+UNSETVAR var19
+BRK 1 ->695
+JMP ->274
+FETCHDIMR tempvar145 var1 17
+SENDVAR tempvar145
+DOFCALL 1 tempvar146 'ord'
+ADD ~147 tempvar146 -34
+SENDVAL ~147
+DOFCALL 1 tempvar148 'chr'
+ASSIGN var20 tempvar148
+SENDVAR var20
+DOFCALL 1 tempvar150 'ord'
+ADD ~151 tempvar150 34
+ISNOTEQUAL ~152 ~151 87
+JMPZ ~152 ->289
+UNSETVAR var20
+BRK 1 ->695
+JMP ->289
+FETCHDIMR tempvar153 var1 18
+SENDVAR tempvar153
+DOFCALL 1 tempvar154 'ord'
+ADD ~155 tempvar154 -19
+SENDVAL ~155
+DOFCALL 1 tempvar156 'chr'
+ASSIGN var21 tempvar156
+SENDVAR var21
+DOFCALL 1 tempvar158 'ord'
+ADD ~159 tempvar158 19
+ISNOTEQUAL ~160 ~159 114
+JMPZ ~160 ->304
+UNSETVAR var21
+BRK 1 ->695
+JMP ->304
+FETCHDIMR tempvar161 var1 19
+SENDVAR tempvar161
+DOFCALL 1 tempvar162 'ord'
+ADD ~163 tempvar162 -40
+SENDVAL ~163
+DOFCALL 1 tempvar164 'chr'
+ASSIGN var22 tempvar164
+SENDVAR var22
+DOFCALL 1 tempvar166 'ord'
+ADD ~167 tempvar166 40
+ISNOTEQUAL ~168 ~167 111
+JMPZ ~168 ->319
+UNSETVAR var22
+BRK 1 ->695
+JMP ->319
+FETCHDIMR tempvar169 var1 20
+SENDVAR tempvar169
+DOFCALL 1 tempvar170 'ord'
+ADD ~171 tempvar170 -62
+SENDVAL ~171
+DOFCALL 1 tempvar172 'chr'
+ASSIGN var23 tempvar172
+SENDVAR var23
+DOFCALL 1 tempvar174 'ord'
+ADD ~175 tempvar174 62
+ISNOTEQUAL ~176 ~175 110
+JMPZ ~176 ->334
+UNSETVAR var23
+BRK 1 ->695
+JMP ->334
+FETCHDIMR tempvar177 var1 21
+SENDVAR tempvar177
+DOFCALL 1 tempvar178 'ord'
+ADD ~179 tempvar178 13
+SENDVAL ~179
+DOFCALL 1 tempvar180 'chr'
+ASSIGN var24 tempvar180
+SENDVAR var24
+DOFCALL 1 tempvar182 'ord'
+ADD ~183 tempvar182 -13
+ISNOTEQUAL ~184 ~183 103
+JMPZ ~184 ->349
+UNSETVAR var24
+BRK 1 ->695
+JMP ->349
+FETCHDIMR tempvar185 var1 22
+SENDVAR tempvar185
+DOFCALL 1 tempvar186 'ord'
+ADD ~187 tempvar186 49
+SENDVAL ~187
+DOFCALL 1 tempvar188 'chr'
+ASSIGN var25 tempvar188
+SENDVAR var25
+DOFCALL 1 tempvar190 'ord'
+ADD ~191 tempvar190 -49
+ISNOTEQUAL ~192 ~191 46
+JMPZ ~192 ->364
+UNSETVAR var25
+BRK 1 ->695
+JMP ->364
+FETCHDIMR tempvar193 var1 23
+SENDVAR tempvar193
+DOFCALL 1 tempvar194 'ord'
+ADD ~195 tempvar194 -35
+SENDVAL ~195
+DOFCALL 1 tempvar196 'chr'
+ASSIGN var26 tempvar196
+SENDVAR var26
+DOFCALL 1 tempvar198 'ord'
+ADD ~199 tempvar198 35
+ISNOTEQUAL ~200 ~199 84
+JMPZ ~200 ->379
+UNSETVAR var26
+BRK 1 ->695
+JMP ->379
+FETCHDIMR tempvar201 var1 24
+SENDVAR tempvar201
+DOFCALL 1 tempvar202 'ord'
+ADD ~203 tempvar202 -26
+SENDVAL ~203
+DOFCALL 1 tempvar204 'chr'
+ASSIGN var27 tempvar204
+SENDVAR var27
+DOFCALL 1 tempvar206 'ord'
+ADD ~207 tempvar206 26
+ISNOTEQUAL ~208 ~207 104
+JMPZ ~208 ->394
+UNSETVAR var27
+BRK 1 ->695
+JMP ->394
+FETCHDIMR tempvar209 var1 25
+SENDVAR tempvar209
+DOFCALL 1 tempvar210 'ord'
+ADD ~211 tempvar210 -48
+SENDVAL ~211
+DOFCALL 1 tempvar212 'chr'
+ASSIGN var28 tempvar212
+SENDVAR var28
+DOFCALL 1 tempvar214 'ord'
+ADD ~215 tempvar214 48
+ISNOTEQUAL ~216 ~215 101
+JMPZ ~216 ->409
+UNSETVAR var28
+BRK 1 ->695
+JMP ->409
+FETCHDIMR tempvar217 var1 26
+SENDVAR tempvar217
+DOFCALL 1 tempvar218 'ord'
+ADD ~219 tempvar218 -65
+SENDVAL ~219
+DOFCALL 1 tempvar220 'chr'
+ASSIGN var29 tempvar220
+SENDVAR var29
+DOFCALL 1 tempvar222 'ord'
+ADD ~223 tempvar222 65
+ISNOTEQUAL ~224 ~223 114
+JMPZ ~224 ->424
+UNSETVAR var29
+BRK 1 ->695
+JMP ->424
+FETCHDIMR tempvar225 var1 27
+SENDVAR tempvar225
+DOFCALL 1 tempvar226 'ord'
+ADD ~227 tempvar226 -33
+SENDVAL ~227
+DOFCALL 1 tempvar228 'chr'
+ASSIGN var30 tempvar228
+SENDVAR var30
+DOFCALL 1 tempvar230 'ord'
+ADD ~231 tempvar230 33
+ISNOTEQUAL ~232 ~231 101
+JMPZ ~232 ->439
+UNSETVAR var30
+BRK 1 ->695
+JMP ->439
+FETCHDIMR tempvar233 var1 28
+SENDVAR tempvar233
+DOFCALL 1 tempvar234 'ord'
+ADD ~235 tempvar234 -28
+SENDVAL ~235
+DOFCALL 1 tempvar236 'chr'
+ASSIGN var31 tempvar236
+SENDVAR var31
+DOFCALL 1 tempvar238 'ord'
+ADD ~239 tempvar238 28
+ISNOTEQUAL ~240 ~239 79
+JMPZ ~240 ->454
+UNSETVAR var31
+BRK 1 ->695
+JMP ->454
+FETCHDIMR tempvar241 var1 29
+SENDVAR tempvar241
+DOFCALL 1 tempvar242 'ord'
+ADD ~243 tempvar242 -15
+SENDVAL ~243
+DOFCALL 1 tempvar244 'chr'
+ASSIGN var32 tempvar244
+SENDVAR var32
+DOFCALL 1 tempvar246 'ord'
+ADD ~247 tempvar246 15
+ISNOTEQUAL ~248 ~247 110
+JMPZ ~248 ->469
+UNSETVAR var32
+BRK 1 ->695
+JMP ->469
+FETCHDIMR tempvar249 var1 30
+SENDVAR tempvar249
+DOFCALL 1 tempvar250 'ord'
+ADD ~251 tempvar250 -31
+SENDVAL ~251
+DOFCALL 1 tempvar252 'chr'
+ASSIGN var33 tempvar252
+SENDVAR var33
+DOFCALL 1 tempvar254 'ord'
+ADD ~255 tempvar254 31
+ISNOTEQUAL ~256 ~255 108
+JMPZ ~256 ->484
+UNSETVAR var33
+BRK 1 ->695
+JMP ->484
+FETCHDIMR tempvar257 var1 31
+SENDVAR tempvar257
+DOFCALL 1 tempvar258 'ord'
+ADD ~259 tempvar258 -16
+SENDVAL ~259
+DOFCALL 1 tempvar260 'chr'
+ASSIGN var34 tempvar260
+SENDVAR var34
+DOFCALL 1 tempvar262 'ord'
+ADD ~263 tempvar262 16
+ISNOTEQUAL ~264 ~263 121
+JMPZ ~264 ->499
+UNSETVAR var34
+BRK 1 ->695
+JMP ->499
+FETCHDIMR tempvar265 var1 32
+SENDVAR tempvar265
+DOFCALL 1 tempvar266 'ord'
+ADD ~267 tempvar266 8
+SENDVAL ~267
+DOFCALL 1 tempvar268 'chr'
+ASSIGN var35 tempvar268
+SENDVAR var35
+DOFCALL 1 tempvar270 'ord'
+ADD ~271 tempvar270 -8
+ISNOTEQUAL ~272 ~271 70
+JMPZ ~272 ->514
+UNSETVAR var35
+BRK 1 ->695
+JMP ->514
+FETCHDIMR tempvar273 var1 33
+SENDVAR tempvar273
+DOFCALL 1 tempvar274 'ord'
+ADD ~275 tempvar274 -66
+SENDVAL ~275
+DOFCALL 1 tempvar276 'chr'
+ASSIGN var36 tempvar276
+SENDVAR var36
+DOFCALL 1 tempvar278 'ord'
+ADD ~279 tempvar278 66
+ISNOTEQUAL ~280 ~279 117
+JMPZ ~280 ->529
+UNSETVAR var36
+BRK 1 ->695
+JMP ->529
+FETCHDIMR tempvar281 var1 34
+SENDVAR tempvar281
+DOFCALL 1 tempvar282 'ord'
+ADD ~283 tempvar282 -15
+SENDVAL ~283
+DOFCALL 1 tempvar284 'chr'
+ASSIGN var37 tempvar284
+SENDVAR var37
+DOFCALL 1 tempvar286 'ord'
+ADD ~287 tempvar286 15
+ISNOTEQUAL ~288 ~287 110
+JMPZ ~288 ->544
+UNSETVAR var37
+BRK 1 ->695
+JMP ->544
+FETCHDIMR tempvar289 var1 35
+SENDVAR tempvar289
+DOFCALL 1 tempvar290 'ord'
+ADD ~291 tempvar290 -12
+SENDVAL ~291
+DOFCALL 1 tempvar292 'chr'
+ASSIGN var38 tempvar292
+SENDVAR var38
+DOFCALL 1 tempvar294 'ord'
+ADD ~295 tempvar294 12
+ISNOTEQUAL ~296 ~295 65
+JMPZ ~296 ->559
+UNSETVAR var38
+BRK 1 ->695
+JMP ->559
+FETCHDIMR tempvar297 var1 36
+SENDVAR tempvar297
+DOFCALL 1 tempvar298 'ord'
+ADD ~299 tempvar298 -61
+SENDVAL ~299
+DOFCALL 1 tempvar300 'chr'
+ASSIGN var39 tempvar300
+SENDVAR var39
+DOFCALL 1 tempvar302 'ord'
+ADD ~303 tempvar302 61
+ISNOTEQUAL ~304 ~303 110
+JMPZ ~304 ->574
+UNSETVAR var39
+BRK 1 ->695
+JMP ->574
+FETCHDIMR tempvar305 var1 37
+SENDVAR tempvar305
+DOFCALL 1 tempvar306 'ord'
+ADD ~307 tempvar306 -33
+SENDVAL ~307
+DOFCALL 1 tempvar308 'chr'
+ASSIGN var40 tempvar308
+SENDVAR var40
+DOFCALL 1 tempvar310 'ord'
+ADD ~311 tempvar310 33
+ISNOTEQUAL ~312 ~311 100
+JMPZ ~312 ->589
+UNSETVAR var40
+BRK 1 ->695
+JMP ->589
+FETCHDIMR tempvar313 var1 38
+SENDVAR tempvar313
+DOFCALL 1 tempvar314 'ord'
+ADD ~315 tempvar314 9
+SENDVAL ~315
+DOFCALL 1 tempvar316 'chr'
+ASSIGN var41 tempvar316
+SENDVAR var41
+DOFCALL 1 tempvar318 'ord'
+ADD ~319 tempvar318 -9
+ISNOTEQUAL ~320 ~319 66
+JMPZ ~320 ->604
+UNSETVAR var41
+BRK 1 ->695
+JMP ->604
+FETCHDIMR tempvar321 var1 39
+SENDVAR tempvar321
+DOFCALL 1 tempvar322 'ord'
+ADD ~323 tempvar322 -16
+SENDVAL ~323
+DOFCALL 1 tempvar324 'chr'
+ASSIGN var42 tempvar324
+SENDVAR var42
+DOFCALL 1 tempvar326 'ord'
+ADD ~327 tempvar326 16
+ISNOTEQUAL ~328 ~327 111
+JMPZ ~328 ->619
+UNSETVAR var42
+BRK 1 ->695
+JMP ->619
+FETCHDIMR tempvar329 var1 40
+SENDVAR tempvar329
+DOFCALL 1 tempvar330 'ord'
+ADD ~331 tempvar330 -37
+SENDVAL ~331
+DOFCALL 1 tempvar332 'chr'
+ASSIGN var43 tempvar332
+SENDVAR var43
+DOFCALL 1 tempvar334 'ord'
+ADD ~335 tempvar334 37
+ISNOTEQUAL ~336 ~335 114
+JMPZ ~336 ->634
+UNSETVAR var43
+BRK 1 ->695
+JMP ->634
+FETCHDIMR tempvar337 var1 41
+SENDVAR tempvar337
+DOFCALL 1 tempvar338 'ord'
+ADD ~339 tempvar338 -56
+SENDVAL ~339
+DOFCALL 1 tempvar340 'chr'
+ASSIGN var44 tempvar340
+SENDVAR var44
+DOFCALL 1 tempvar342 'ord'
+ADD ~343 tempvar342 56
+ISNOTEQUAL ~344 ~343 105
+JMPZ ~344 ->649
+UNSETVAR var44
+BRK 1 ->695
+JMP ->649
+FETCHDIMR tempvar345 var1 42
+SENDVAR tempvar345
+DOFCALL 1 tempvar346 'ord'
+ADD ~347 tempvar346 0
+SENDVAL ~347
+DOFCALL 1 tempvar348 'chr'
+ASSIGN var45 tempvar348
+SENDVAR var45
+DOFCALL 1 tempvar350 'ord'
+ADD ~351 tempvar350 0
+ISNOTEQUAL ~352 ~351 110
+JMPZ ~352 ->664
+UNSETVAR var45
+BRK 1 ->695
+JMP ->664
+FETCHDIMR tempvar353 var1 43
+SENDVAR tempvar353
+DOFCALL 1 tempvar354 'ord'
+ADD ~355 tempvar354 -35
+SENDVAL ~355
+DOFCALL 1 tempvar356 'chr'
+ASSIGN var46 tempvar356
+SENDVAR var46
+DOFCALL 1 tempvar358 'ord'
+ADD ~359 tempvar358 35
+ISNOTEQUAL ~360 ~359 103
+JMPZ ~360 ->679
+UNSETVAR var46
+BRK 1 ->695
+JMP ->679
+FETCHDIMR tempvar361 var1 44
+SENDVAR tempvar361
+DOFCALL 1 tempvar362 'ord'
+ADD ~363 tempvar362 79
+SENDVAL ~363
+DOFCALL 1 tempvar364 'chr'
+ASSIGN var47 tempvar364
+SENDVAR var47
+DOFCALL 1 tempvar366 'ord'
+ADD ~367 tempvar366 -79
+ISNOTEQUAL ~368 ~367 46
+JMPZ ~368 ->694
+UNSETVAR var47
+BRK 1 ->695
+JMP ->694
+JMPNZ false ->0
+RETURN 1
+
+
