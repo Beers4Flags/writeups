@@ -306,3 +306,23 @@ $
 ```
 
 AND NO FLAG!!!!! Blood and guts!
+
+Bon, en fait sournoisement, le binaire n'est pas le même et le flag est le mot sde passe de Trump sur le serveur. Ayant le shell on peut faire
+```
+$  strings main | grep flag -A5 -B5
+PTRh`
+QVh9
+Dona
+ld T
+rump
+flag
+{c4n
+_1_g
+3t_a
+_r3f
+und}
+[...]
+```
+et on obtient flag{c4n_1_g3t_a_r3fund}.
+
+Un CTF qui me laisse amer!!
