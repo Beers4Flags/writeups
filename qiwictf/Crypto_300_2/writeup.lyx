@@ -1,0 +1,164 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass article
+\begin_preamble
+
+\end_preamble
+\use_default_options false
+\maintain_unincluded_children false
+\language french
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 1cm
+\topmargin 1cm
+\rightmargin 1cm
+\bottommargin 1.5cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+Le problème est le suivant: on a 
+\begin_inset Formula $g^{a}=2^{219}$
+\end_inset
+
+, 
+\begin_inset Formula $g^{b}=2^{146}$
+\end_inset
+
+ et 
+\begin_inset Formula $g=2^{73}$
+\end_inset
+
+.
+ Il faut trouver 
+\begin_inset Formula $g^{ab}$
+\end_inset
+
+ (et non 
+\begin_inset Formula $ab$
+\end_inset
+
+ comme je le croyais).
+ Il suffit donc de remarquer que
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $2^{73a}=2^{219}[p]$
+\end_inset
+
+ doc 
+\begin_inset Formula $73a=219+k\left(p-1\right)$
+\end_inset
+
+, de même 
+\begin_inset Formula $146=73b+l\left(p-1\right)$
+\end_inset
+
+ donc 
+\begin_inset Formula $73^{2}ab=219.146\left[p-1\right]$
+\end_inset
+
+.
+ Il nous faut trouver 
+\begin_inset Formula $g^{ab}\left[p\right]=2^{73ab}\left[p\right]$
+\end_inset
+
+.
+ Il nous faut donc trouver l'inverse de 
+\begin_inset Formula $73$
+\end_inset
+
+ modulo 
+\begin_inset Formula $p-1$
+\end_inset
+
+.
+ On trouve
+\begin_inset Formula 
+\[
+1010177309790195671885714212193591146590911123469289912020268327951639755690472717430278200546821491127331167397611962735556799389941179927471028349773459
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+et donc 
+\begin_inset Formula $73ab=219*146*(73)^{-1}\left[p-1\right]=438$
+\end_inset
+
+, on a donc enfin 
+\begin_inset Formula $g^{ab}=2^{73ab}=2^{438}=2^{219*2}=709803441694928604052074031140629428079727891296209043243642772637343054798240159498233447962659731992932150006119314388217384402944$
+\end_inset
+
+ le flag cherché est donc 
+\begin_inset Formula $70980344169492860405$
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
