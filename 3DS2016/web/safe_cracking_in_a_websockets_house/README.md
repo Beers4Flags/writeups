@@ -99,6 +99,9 @@ INPUT : a
 I let first input empty, then an "a", 9940-9843 = 97 = ord(a)
 
 Okay we have to line up values to open the safe, lets try to set the first value to 0 : 
+
+But how to do such a thing whith ord(char) value ? ===> UNICODE FTW
+
 ```
 INPUT : a
 > a
@@ -120,10 +123,10 @@ Well, lets "clik" all values !
 
 See breakThatSafe.py
 
-
+```bash
 [ghozt@vps355171 tmp]$ python breakThatSafe.py
 < 3DS{M4st3R_0f_w3BS()c|<3t}
-
+```
 
 \o/
 
