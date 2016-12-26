@@ -23,6 +23,7 @@ async def hello():
                 char7 = chr(int(splitted[6])+97)
                 char8 = chr(int(splitted[7])+97)
                 otherhalf = char5+char6+char7+char8
+		print("half+otherhalf")
                 await websocket.send(half+otherhalf)
                 greeting = await websocket.recv()
                 print("< {}".format(greeting))

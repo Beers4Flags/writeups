@@ -125,6 +125,7 @@ See breakThatSafe.py
 
 ```bash
 [ghozt@vps355171 tmp]$ python breakThatSafe.py
+⛔🔝🆗☕🚪🍦👎⛳
 < 3DS{M4st3R_0f_w3BS()c|<3t}
 ```
 
