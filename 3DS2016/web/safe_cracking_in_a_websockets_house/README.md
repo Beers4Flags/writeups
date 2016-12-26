@@ -12,7 +12,7 @@ Let's analyse this
 ##Discover how to invade the house
 
 Accessing the challenge with HTTP doesn't work, I used curl to get more informations
-
+```bash
 [ghozt@vps355171 ~]$ curl -v -I http://192.241.176.246:8888
 * Rebuilt URL to: http://192.241.176.246:8888/
 *   Trying 192.241.176.246...
@@ -29,10 +29,11 @@ HTTP/1.1 400 Bad Request
 Sec-WebSocket-Version: 13, 6, 0
 < X-Powered-By: Ratchet/0.3.5
 X-Powered-By: Ratchet/0.3.5
-
+```
 
 After some searchi found a snippet :
 
+```python
 import asyncio
 import websockets
 
@@ -45,7 +46,7 @@ async def hello():
                         greeting = await websocket.recv()
                         print("< {}".format(greeting))
 asyncio.get_event_loop().run_until_complete(hello())
-
+```
 
 Works fine, we're in da house !
 
@@ -53,6 +54,7 @@ Works fine, we're in da house !
 
 Playing with input
 
+```bash
 [ghozt@vps355171 tmp]$ python test.py
 INPUT : a
 > a
@@ -69,6 +71,7 @@ INPUT : aaaaaaaa
 INPUT : aaaaaaaa
 > aaaaaaaa
 < You see him protecting himself.
+```
 
 We need to send 8 chars, and the programm protect itself after a few of attempts.
 
@@ -84,18 +87,19 @@ constant+chr(input[i])
 
 proof : 
 
+```
 INPUT :
 >
 < 9940|untouched|untouched|untouched|untouched|untouched|untouched|untouched|
 INPUT : a
 > a
 < 9843|untouched|untouched|untouched|untouched|untouched|untouched|untouched|
-
+```
 
 I let first input empty, then an "a", 9940-9843 = 97 = ord(a)
 
 Okay we have to line up values to open the safe, lets try to set the first value to 0 : 
-
+```
 INPUT : a
 > a
 < 9652|untouched|untouched|untouched|untouched|untouched|untouched|untouched|
@@ -109,6 +113,8 @@ I calculate : chr(9652+ord(a))
 INPUT : ☕
 > ☕
 < click|untouched|untouched|untouched|untouched|untouched|untouched|untouched|
+```
+
 
 Well, lets "clik" all values ! 
 
