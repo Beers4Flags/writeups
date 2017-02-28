@@ -40,7 +40,6 @@ while True:
 
 	data = {}
 	data['val3'] = str(res)
-	url="http://neverlanctf-challenges-elb-248020705.us-west-2.elb.amazonaws.com:9129/"
 	url_values = urllib.urlencode(data)
 	full_url = url + '?' + url_values
 	req = urllib2.Request(full_url)
