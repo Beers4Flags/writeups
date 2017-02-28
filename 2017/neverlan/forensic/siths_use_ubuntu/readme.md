@@ -15,8 +15,9 @@ ps faux
 
 You can see on figure 1 with netstat a strange process nc.traditionnal hum hum a backdoor :-)
 ![Alt](img/netstat.png "netstat results")
+
 Furthermore on figure 2 with ps it's confirmed by the cron process launch /etc/init.d/rebels
-![Alt](img/ps.png "ps results")
+![Alt](img/ps.png "ps "results")
 
 So I do a cat on /etc/init.d/rebels and I've the flag :
 ![Alt](img/process.png "Process rebels")
@@ -36,8 +37,8 @@ Ok it's simple, you do a simple cat on /etc/shadow.backup
 Then you make a simple bruteforce with john :-)
 ```BASH
 john --wordlist=rockyou.txt shadow.backup
-ps faux
 ```
+
 
 And you have the password : starwars
 
