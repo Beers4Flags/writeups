@@ -14,7 +14,7 @@ ps faux
 ```
 
 You can see on figure with netstat a strange process nc.traditionnal hum hum a backdoor :-)
-![Alt](img/netstat.png "netstat results")
+![Alt](img/figure1.png "netstat results")
 
 Furthermore on figure with ps it's confirmed by the cron process launch /etc/init.d/rebels
 ![Alt](img/ps.png "ps results")
@@ -22,6 +22,7 @@ Furthermore on figure with ps it's confirmed by the cron process launch /etc/ini
 So I do a cat on /etc/init.d/rebels and I've the flag :
 ![Alt](img/process.png "Process rebels")
 
+The flag is : kylo_ren_undercover_boss
 
 
 **Siths use Ubuntu (2 of 3) - 175pts**
