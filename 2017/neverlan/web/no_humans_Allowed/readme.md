@@ -8,7 +8,7 @@ A simple curl on website :
 <docType 5="5"></docType><html lang="en"><head><link rel="stylesheet" href="/pub/styles/site.css"/><title>Robot Liberation</title></head><body><div id="div" class="banner">Robot Liberation!</div><div id="div" class="content"><h2>Prove you are a robot.</h2><p>Provide the answer. You have 1000 miliseconds.</p><p>60452 + 27816</p><form method="post"><input type="text" name="val3"/><input type="submit" value="Send Answer"/></form></div></body></html>
 ```
 
-So you just have to do regex/split, look this my script :
+So you just have to do regex/split, this is the script I made :
 
 ```python
 #!/usr/bin/env python
@@ -62,7 +62,7 @@ The result :
 <docType 5="5"></docType><html lang="en"><head><link rel="stylesheet" href="/pub/styles/site.css"/><title>Robot Liberation</title></head><body><div id="div" class="banner">Robot Liberation!</div><div id="div" class="content"><h2>Prove you are a robot.</h2><p>Provide the answer. You have 1000 miliseconds.</p><p>15701 + 94307</p><form method="post"><input type="text" name="val3"/><input type="submit" value="Send Answer"/></form></div></body></html>
 ```
 
-You look : Robot Detected</h2><p>Your key: jHBhbfoY1UEHQuRMwzt7Yr8xkCiCvfbS
+We can see :  Robot Detected</h2><p>Your key: jHBhbfoY1UEHQuRMwzt7Yr8xkCiCvfbS
 
 The flag is : jHBhbfoY1UEHQuRMwzt7Yr8xkCiCvfbS
 
