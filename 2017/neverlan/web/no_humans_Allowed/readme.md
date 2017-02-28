@@ -69,12 +69,16 @@ The flag is : jHBhbfoY1UEHQuRMwzt7Yr8xkCiCvfbS
 By team Beers4Flags
 
 ```
-  _.._..,_,_
- (          )
-  ]~,"-.-~~[
-.=] Beers ([
-| ])  4   ([
-'=]) Flags [
-  |:: '    |
-   ~~----~~
+ ________
+|        |
+|  #BFF  |
+|________|
+   _.._,_|,_
+  (      |   )
+   ]~,"-.-~~[
+ .=] Beers ([
+ | ])  4   ([
+ '=]) Flags [
+   |:: '    |
+    ~~----~~
 ```

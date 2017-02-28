@@ -76,3 +76,18 @@ The flag is : should-have-used-fail2ban
 
 
 By team Beers4Flags
+
+```
+ ________
+|        |
+|  #BFF  |
+|________|
+   _.._,_|,_
+  (      |   )
+   ]~,"-.-~~[
+ .=] Beers ([
+ | ])  4   ([
+ '=]) Flags [
+   |:: '    |
+    ~~----~~
+```
