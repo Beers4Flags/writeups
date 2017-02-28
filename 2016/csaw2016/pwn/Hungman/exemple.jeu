@@ -1,0 +1,194 @@
+^X^Cfrancois@athos:~/tmp/csaw$ python jeu.py 1 'cat /etc/p*'
+OK...
+START= 00007fdca1557740
+OK...
+SYSTEM= 00007fdca157c380
+Ok ...
+# ---------------------------------------------------------------------------#
+# /etc/pam.conf								     #
+# ---------------------------------------------------------------------------#
+#
+# NOTE
+# ----
+#
+# NOTE: Most program use a file under the /etc/pam.d/ directory to setup their
+# PAM service modules. This file is used only if that directory does not exist.
+# ---------------------------------------------------------------------------#
+
+# Format:
+# serv.	module	   ctrl	      module [path]	...[args..]		     #
+# name	type	   flag							     #
+
+root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+sys:x:3:3:sys:/dev:/usr/sbin/nologin
+sync:x:4:65534:sync:/bin:/bin/sync
+games:x:5:60:games:/usr/games:/usr/sbin/nologin
+man:x:6:12:man:/var/cache/man:/usr/sbin/nologin
+lp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin
+mail:x:8:8:mail:/var/mail:/usr/sbin/nologin
+news:x:9:9:news:/var/spool/news:/usr/sbin/nologin
+uucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin
+proxy:x:13:13:proxy:/bin:/usr/sbin/nologin
+www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
+backup:x:34:34:backup:/var/backups:/usr/sbin/nologin
+list:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin
+irc:x:39:39:ircd:/var/run/ircd:/usr/sbin/nologin
+gnats:x:41:41:Gnats Bug-Reporting System (admin):/var/lib/gnats:/usr/sbin/nologin
+nobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin
+systemd-timesync:x:100:102:systemd Time Synchronization,,,:/run/systemd:/bin/false
+systemd-network:x:101:103:systemd Network Management,,,:/run/systemd/netif:/bin/false
+systemd-resolve:x:102:104:systemd Resolver,,,:/run/systemd/resolve:/bin/false
+systemd-bus-proxy:x:103:105:systemd Bus Proxy,,,:/run/systemd:/bin/false
+_apt:x:104:65534::/nonexistent:/bin/false
+hungman:x:1000:1000:,,,:/home/hungman:/bin/bash
+# /etc/profile: system-wide .profile file for the Bourne shell (sh(1))
+# and Bourne compatible shells (bash(1), ksh(1), ash(1), ...).
+
+if [ "$PS1" ]; then
+  if [ "$BASH" ] && [ "$BASH" != "/bin/sh" ]; then
+    # The file bash.bashrc already sets the default PS1.
+    # PS1='\h:\w\$ '
+    if [ -f /etc/bash.bashrc ]; then
+      . /etc/bash.bashrc
+    fi
+  else
+    if [ "`id -u`" -eq 0 ]; then
+      PS1='# '
+    else
+      PS1='$ '
+    fi
+  fi
+fi
+
+if [ -d /etc/profile.d ]; then
+  for i in /etc/profile.d/*.sh; do
+    if [ -r $i ]; then
+      . $i
+    fi
+  done
+  unset i
+fi
+# Internet (IP) protocols
+#
+# Updated from http://www.iana.org/assignments/protocol-numbers and other
+# sources.
+# New protocols will be added on request if they have been officially
+# assigned by IANA and are not historical.
+# If you need a huge list of used numbers please install the nmap package.
+
+ip	0	IP		# internet protocol, pseudo protocol number
+hopopt	0	HOPOPT		# IPv6 Hop-by-Hop Option [RFC1883]
+icmp	1	ICMP		# internet control message protocol
+igmp	2	IGMP		# Internet Group Management
+ggp	3	GGP		# gateway-gateway protocol
+ipencap	4	IP-ENCAP	# IP encapsulated in IP (officially ``IP'')
+st	5	ST		# ST datagram mode
+tcp	6	TCP		# transmission control protocol
+egp	8	EGP		# exterior gateway protocol
+igp	9	IGP		# any private interior gateway (Cisco)
+pup	12	PUP		# PARC universal packet protocol
+udp	17	UDP		# user datagram protocol
+hmp	20	HMP		# host monitoring protocol
+xns-idp	22	XNS-IDP		# Xerox NS IDP
+rdp	27	RDP		# "reliable datagram" protocol
+iso-tp4	29	ISO-TP4		# ISO Transport Protocol class 4 [RFC905]
+dccp	33	DCCP		# Datagram Congestion Control Prot. [RFC4340]
+xtp	36	XTP		# Xpress Transfer Protocol
+ddp	37	DDP		# Datagram Delivery Protocol
+idpr-cmtp 38	IDPR-CMTP	# IDPR Control Message Transport
+ipv6	41	IPv6		# Internet Protocol, version 6
+ipv6-route 43	IPv6-Route	# Routing Header for IPv6
+ipv6-frag 44	IPv6-Frag	# Fragment Header for IPv6
+idrp	45	IDRP		# Inter-Domain Routing Protocol
+rsvp	46	RSVP		# Reservation Protocol
+gre	47	GRE		# General Routing Encapsulation
+esp	50	IPSEC-ESP	# Encap Security Payload [RFC2406]
+ah	51	IPSEC-AH	# Authentication Header [RFC2402]
+skip	57	SKIP		# SKIP
+ipv6-icmp 58	IPv6-ICMP	# ICMP for IPv6
+ipv6-nonxt 59	IPv6-NoNxt	# No Nex
+t Header for IPv6
+ipv6-opts 60	IPv6-Opts	# Destination Options for IPv6
+rspf	73	RSPF CPHB	# Radio Shortest Path First (officially CPHB)
+vmtp	81	VMTP		# Versatile Message Transport
+eigrp	88	EIGRP		# Enhanced Interior Routing Protocol (Cisco)
+ospf	89	OSPFIGP		# Open Shortest Path First IGP
+ax.25	93	AX.25		# AX.25 frames
+ipip	94	IPIP		# IP-within-IP Encapsulation Protocol
+etherip	97	ETHERIP		# Ethernet-within-IP Encapsulation [RFC3378]
+encap	98	ENCAP		# Yet Another IP encapsulation [RFC1241]
+#	99			# any private encryption scheme
+pim	103	PIM		# Protocol Independent Multicast
+ipcomp	108	IPCOMP		# IP Payload Compression Protocol
+vrrp	112	VRRP		# Virtual Router Redundancy Protocol [RFC5798]
+l2tp	115	L2TP		# Layer Two Tunneling Protocol [RFC2661]
+isis	124	ISIS		# IS-IS over IPv4
+sctp	132	SCTP		# 
+francois@athos:~/tmp/csaw$ 
+
+francois@athos:~/tmp/csaw$ python jeu.py 1 'cat /var/log/*'
+START= 00007fc6506c4740
+SYSTEM= 00007fc6506e9380
+Ok ...
+update-alternatives 2016-08-19 00:50:11: run with --quiet --install /usr/bin/awk awk /usr/bin/mawk 5 --slave /usr/share/man/man1/awk.1.gz awk.1.gz /usr/share/man/man1/mawk.1.gz --slave /usr/bin/nawk nawk /usr/bin/mawk --slave /usr/share/man/man1/nawk.1.gz nawk.1.gz /usr/share/man/man1/mawk.1.gz
+update-alternatives 2016-08-19 00:50:11: link group awk updated to point to /usr/bin/mawk
+update-alternatives 2016-08-19 00:50:18: run with --quiet --install /usr/bin/awk awk /usr/bin/mawk 5 --slave /usr/share/man/man1/awk.1.gz awk.1.gz /usr/share/man/man1/mawk.1.gz --slave /usr/bin/nawk nawk /usr/bin/mawk --slave /usr/share/man/man1/nawk.1.gz nawk.1.gz /usr/share/man/man1/mawk.1.gz
+update-alternatives 2016-08-19 00:50:20: run with --install /usr/sbin/rmt rmt /usr/sbin/rmt-tar 50 --slave /usr/share/man/man8/rmt.8.gz rmt.8.gz /usr/share/man/man8/rmt-tar.8.gz
+update-alternatives 2016-08-19 00:50:20: link group rmt updated to point to /usr/sbin/rmt-tar
+update-alternatives 2016-08-19 00:50:21: run with --install /usr/share/man/man7/builtins.7.gz builtins.7.gz /usr/share/man/man7/bash-builtins.7.gz 10
+update-alternatives 2016-08-19 00:50:21: link group builtins.7.gz updated to point to /usr/share/man/man7/bash-builtins.7.gz
+update-alternatives 2016-08-19 00:50:22: run with --install /usr/bin/pager pager /bin/more 50 --slave /usr/share/man/man1/pager.1.gz pager.1.gz /usr/share/man/man1/more.1.gz
+update-alternatives 2016-08-19 00:50:22: link group pager updated to point to /bin/more
+update-alternatives 2016-08-19 00:50:22: run with --install /usr/bin/pager pager /usr/bin/pg 10 --slave /usr/share/man/man1/pager.1.gz pager.1.gz /usr/share/man/man1/pg.1.gz
+update-alternatives 2016-08-19 00:50:22: run with --install /usr/bin/w w /usr/bin/w.procps 50 --slave /usr/share/man/man1/w.1.gz w.1.gz /usr/share/man/man1/w.procps.1.gz
+update-alternatives 2016-08-19 00:50:22: link group w updated to point to /usr/bin/w.procps
+update-alternatives 2016-08-19 00:50:28: run with --remove builtins.7.gz /usr/share/man/man7/bash-builtins.7.gz
+update-alternatives 2016-08-19 00:50:28: link group builtins.7.gz fully removed
+update-alternatives 2016-08-19 00:50:28: run with --install /usr/share/man/man7/builtins.7.gz builtins.7.gz /usr/share/man/man7/bash-builtins.7.gz 10
+update-alternatives 2016-08-19 00:50:28: link group builtins.7.gz updated to point to /usr/share/man/man7/bash-builtins.7.gz
+update-alternatives 2016-08-19 00:50:30: run with --install /usr/bin/pager pager /bin/more 50 --slave /usr/share/man/man1/pager.1.gz pager.1.gz /usr/share/man/man1/more.1.gz
+update-alternatives 2016-08-19 00:50:30: run with --install /usr/bin/pager pager /usr/bin/pg 10 --slave /usr/share/man/man1/pager.1.gz pager.1.gz /usr/share/man/man1/pg.1.gz
+update-alternatives 2016-09-16 21:30:52: run with --install /usr/bin/rename rename /usr/bin/prename 60 --slave /usr/share/man/man1/rename.1.gz rename.1.gz /usr/share/man/man1/prename.1.gz
+update-alternatives 2016-09-16 21:30:52: link group rename updated to point to /usr/bin/prename
+update-alternatives 2016-09-16 21:30:54: run with --quiet --install /lib/cpp cpp /usr/bin/cpp 10
+update-alternatives 2016-09-16 21:30:54: link group cpp updated to point to /usr/bin/cpp
+update-alternatives 2016-09-16 21:30:54: run with --quiet --install /usr/bin/cc cc /usr/bin/gcc 20 --slave /usr/share/man/man1/cc.1.gz cc.1.gz /usr/share/man/man1/gcc.1.gz
+update-alternatives 2016-09-16 21:30:54: link group cc updated to point to /usr/bin/gcc
+update-alternatives 2016-09-16 21:30:54: run with --quiet --install /usr/bin/c89 c89 /usr/bin/c89-gcc 20 --slave /usr/share/man/man1/c89.1.gz c89.1.gz /usr/share/man/man1/c89-gcc.1.gz
+update-alternatives 2016-09-16 21:30:54: link group c89 updated to point to /usr/bin/c89-gcc
+update-alternatives 2016-09-16 21:30:54: run with --quiet --install /usr/bin/c99 c99 /usr/bin/c99-gcc 20 --slave /usr/share/man/man1/c99.1.gz c99.1.gz /usr/share/man/man1/c99-gcc.1.gz
+update-alternatives 2016-09-16 21:30:54: link group c99 updated to point to /usr/bin/c99-gcc
+update-alternatives 2016-09-16 21:30:54: run with --install /usr/bin/c
+++ c++ /usr/bin/g++ 20 --slave /usr/share/man/man1/c++.1.gz c++.1.gz /usr/share/man/man1/g++.1.gz
+update-alternatives 2016-09-16 21:30:54: link group c++ updated to point to /usr/bin/g++
+update-alternatives 2016-09-16 21:30:54: run with --install /usr/bin/lzma lzma /usr/bin/xz 20 --slave /usr/share/man/man1/lzma.1.gz lzma.1.gz /usr/share/man/man1/xz.1.gz --slave /usr/bin/unlzma unlzma /usr/bin/unxz --slave /usr/share/man/man1/unlzma.1.gz unlzma.1.gz /usr/share/man/man1/unxz.1.gz --slave /usr/bin/lzcat lzcat /usr/bin/xzcat --slave /usr/share/man/man1/lzcat.1.gz lzcat.1.gz /usr/share/man/man1/xzcat.1.gz --slave /usr/bin/lzmore lzmore /usr/bin/xzmore --slave /usr/share/man/man1/lzmore.1.gz lzmore.1.gz /usr/share/man/man1/xzmore.1.gz --slave /usr/bin/lzless lzless /usr/bin/xzless --slave /usr/share/man/man1/lzless.1.gz lzless.1.gz /usr/share/man/man1/xzless.1.gz --slave /usr/bin/lzdiff lzdiff /usr/bin/xzdiff --slave /usr/share/man/man1/lzdiff.1.gz lzdiff.1.gz /usr/share/man/man1/xzdiff.1.gz --slave /usr/bin/lzcmp lzcmp /usr/bin/xzcmp --slave /usr/share/man/man1/lzcmp.1.gz lzcmp.1.gz /usr/share/man/man1/xzcmp.1.gz --slave /usr/bin/lzgrep lzgrep /usr/bin/xzgrep --slave /usr/share/man/man1/lzgrep.1.gz lzgrep.1.gz /usr/share/man/man1/xzgrep.1.gz --slave /usr/bin/lzegrep lzegrep /usr/bin/xzegrep --slave /usr/share/man/man1/lzegrep.1.gz lzegrep.1.gz /usr/share/man/man1/xzegrep.1.gz --slave /usr/bin/lzfgrep lzfgrep /usr/bin/xzfgrep --slave /usr/share/man/man1/lzfgrep.1.gz lzfgrep.1.gz /usr/share/man/man1/xzfgrep.1.gz
+update-alternatives 2016-09-16 21:30:54: link group lzma updated to point to /usr/bin/xz
+update-alternatives 2016-09-16 21:30:54: run with --install /usr/bin/fakeroot fakeroot /usr/bin/fakeroot-sysv 50 --slave /usr/share/man/man1/fakeroot.1.gz fakeroot.1.gz /usr/share/man/man1/fakeroot-sysv.1.gz --slave /usr/share/man/man1/faked.1.gz faked.1.gz /usr/share/man/man1/faked-sysv.1.gz --slave /usr/share/man/es/man1/fakeroot.1.gz fakeroot.es.1.gz /usr/share/man/es/man1/fakeroot-sysv.1.gz --slave /usr/share/man/es/man1/faked.1.gz faked.es.1.gz /usr/share/man/es/man1/faked-sysv.1.gz --slave /usr/share/man/fr/man1/fakeroot.1.gz fakeroot.fr.1.gz /usr/share/man/fr/man1/fakeroot-sysv.1.gz --slave /usr/share/man/fr/man1/faked.1.gz faked.fr.1.gz /usr/share/man/fr/man1/faked-sysv.1.gz --slave /usr/share/man/sv/man1/fakeroot.1.gz fakeroot.sv.1.gz /usr/share/man/sv/man1/fakeroot-sysv.1.gz --slave /usr/share/man/sv/man1/faked.1.gz faked.sv.1.gz /usr/share/man/sv/man1/faked-sysv.1.gz
+update-alternatives 2016-09-16 21:30:54: link group fakeroot updated to point to /usr/bin/fakeroot-sysv
+update-alternatives 2016-09-16 21:30:54: run with --install /usr/bin/fakeroot fakeroot /usr/bin/fakeroot-tcp 30 --slave /usr/share/man/man1/fakeroot.1.gz fakeroot.1.gz /usr/share/man/man1/fakeroot-tcp.1.gz --slave /usr/share/man/man1/faked.1.gz faked.1.gz /usr/share/man/man1/faked-tcp.1.gz --slave /usr/share/man/es/man1/fakeroot.1.gz fakeroot.es.1.gz /usr/share/man/es/man1/fakeroot-tcp.1.gz --slave /usr/share/man/es/man1/faked.1.gz faked.es.1.gz /usr/share/man/es/man1/faked-tcp.1.gz --slave /usr/share/man/fr/man1/fakeroot.1.gz fakeroot.fr.1.gz /usr/share/man/fr/man1/fakeroot-tcp.1.gz --slave /usr/share/man/fr/man1/faked.1.gz faked.fr.1.gz /usr/share/man/fr/man1/faked-tcp.1.gz --slave /usr/share/man/sv/man1/fakeroot.1.gz fakeroot.sv.1.gz /usr/share/man/sv/man1/fakeroot-tcp.1.gz --slave /usr/share/man/sv/man1/faked.1.gz faked.sv.1.gz /usr/share/man/sv/man1/faked-tcp.1.gz
+update-alternatives 2016-09-16 21:30:54: run with --install /usr/bin/rename rename /usr/bin/file-rename 70 --slave /usr/share/man/man1/rename.1.gz rename.1.gz /usr/share/man/man1/file-rename.1p.gz
+update-alternatives 2016-09-16 21:30:54: link group rename updated to point to /usr/bin/file-rename
+gpgv: Signature made Thu Apr 21 23:25:09 2016 UTC using DSA key ID 437D05B5
+gpgv: Good signature from "Ubuntu Archive Automatic Signing Key <ftpmaster@ubuntu.com>"
+gpgv: Signature made Thu Apr 21 23:25:09 2016 UTC using RSA key ID C0B21F32
+gpgv: Good signature from "Ubuntu Archive Automatic Signing K
+francois@athos:~/tmp/csaw$ 
+
+francois@athos:~/tmp/csaw$ python jeu.py 1 'ps xa'
+START= 00007f84f5804740
+SYSTEM= 00007f84f5829380
+Ok ...
+  PID TTY      STAT   TIME COMMAND
+    1 ?        Ss     0:00 /bin/sh -c su hungman -c "socat -T10 TCP-LISTEN:8000,reuseaddr,fork EXEC:/home/hungman/hungman"
+    7 ?        S      0:00 su hungman -c socat -T10 TCP-LISTEN:8000,reuseaddr,fork EXEC:/home/hungman/hungman
+    8 ?        Ss     0:00 socat -T10 TCP-LISTEN:8000,reuseaddr,fork EXEC:/home/hungman/hungman
+ 1326 ?        S      0:00 socat -T10 TCP-LISTEN:8000,reuseaddr,fork EXEC:/home/hungman/hungman
+ 1327 ?        S      0:00 /home/hungman/hungman
+ 1328 ?        S      0:00 sh -c ps xa
+ 1329 ?        R      0:00 ps xa
+
+Highest player: ps xa score: 173
+Continue? 
+francois@athos:~/tmp/csaw$ 

@@ -3,7 +3,7 @@ On trouve dans cette archive
 * le binaire Gh
 * 2 fichiers pile.py, pile2.py et pile3.py faisant le chall en local:
 Le fichier flag.txt contient YES:
-
+```
 francois@athos:~/tmp/Gh/C2$ python pile.py | ./Gh
 Benvenuti al convegno RetOri Pro!
 Vuole lasciare un messaggio?
@@ -34,7 +34,7 @@ YES
 Benvenuti al convegno RetOri Pro!
 Vuole lasciare un messaggio?
 francois@athos:~/tmp/Gh/C2$ 
-
+```
 
 Le fichier pile2.py contient les explications.
 Les gadgets utilisés sont
@@ -42,6 +42,7 @@ Les gadgets utilisés sont
 0x080486ee : pop edi ; pop ebp ; ret
 
 p.py est l'adaptation du challenge en remote.
+```
 francois@athos:~/tmp/Gh/C2$ python p.py
 Benvenuti al convegno RetOri Pro!
 Vuole lasciare un messaggio?
@@ -63,3 +64,4 @@ Vuole lasciare un messaggio?
 francois@athos:~/tmp/Gh/C2$ 
 
 Le flag est «IceCTF{italiano_ha_portato_a_voi_da_google_tradurre}»
+```
