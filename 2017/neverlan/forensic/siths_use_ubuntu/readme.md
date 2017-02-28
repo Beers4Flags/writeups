@@ -13,7 +13,7 @@ netstat -plantu
 ps faux
 ```
 
-You can see on figure with netstat a strange process nc.traditionnal hum hum a backdoor :-)
+As you can see above there is a strange process listed. nc.traditionnal, looks like a backdoor to me 
 ![Alt](img/figure1.png "netstat results")
 
 Furthermore on figure with ps it's confirmed by the cron process launch /etc/init.d/rebels
