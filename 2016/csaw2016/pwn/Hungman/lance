@@ -1,0 +1,2 @@
+#!/bin/sh
+socat tcp-listen:8003,fork,reuseaddr exec:./hungman

