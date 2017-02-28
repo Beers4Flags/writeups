@@ -39,8 +39,8 @@ Then you make a simple bruteforce with john :-)
 john --wordlist=rockyou.txt shadow.backup
 ```
 
-
 And you have the password : starwars
+
 
 
 
