@@ -13,11 +13,11 @@ netstat -plantu
 ps faux
 ```
 
-You can see on figure 1 with netstat a strange process nc.traditionnal hum hum a backdoor :-)
+You can see on figure with netstat a strange process nc.traditionnal hum hum a backdoor :-)
 ![Alt](img/netstat.png "netstat results")
 
-Furthermore on figure 2 with ps it's confirmed by the cron process launch /etc/init.d/rebels
-![Alt](img/ps.png "ps "results")
+Furthermore on figure with ps it's confirmed by the cron process launch /etc/init.d/rebels
+![Alt](img/ps.png "ps results")
 
 So I do a cat on /etc/init.d/rebels and I've the flag :
 ![Alt](img/process.png "Process rebels")
