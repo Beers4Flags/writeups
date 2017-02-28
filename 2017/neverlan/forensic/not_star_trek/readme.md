@@ -56,8 +56,22 @@ So I recover mainly 2 files : how to build a lightsaber.pdf and the-jedi-path.pd
 
 And I do simply a binwalk on each
 
-For the file the-jedi-path.pdf you have a png whose flag is written on it : flag{you_found_the_rebel_alliance}
+On the pdf "the-jedi-path" we can find a png. We open it and "tada" flag : flag{you_found_the_rebel_alliance}
 
 ![Alt](img/00003840.png "Flag results")
 
 The flag is : you_found_the_rebel_alliance
+
+
+By team Beers4Flags
+
+```
+  _.._..,_,_
+ (          )
+  ]~,"-.-~~[
+.=] Beers ([
+| ])  4   ([
+'=]) Flags [
+  |:: '    |
+  ~~----~~:]
+```
