@@ -59,6 +59,7 @@ You've got to figure out how they broke in.
 Update: Specifically you're looking for PROOF of how they got in.
 
 So my first idea was to look at the logs of course !!!
+
 Otherwise I look the auth's log
 
 ```BASH
