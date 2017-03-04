@@ -21,8 +21,9 @@ Nous avons donc ici une collision sha 1 qui colle pafaitement avec l'actualité 
 
 Notre premier essaye à été d'uploader les deux pdf fournit dans les recherches de collision SHA1 de Google. Ils ont la particularité d'avoir la même somme sha1.
 
-[Fichier 1  : Collision SHA1 par google ](/file/shattered-1.pdf)
-[Fichier 1  : Collision SHA1 par google ](/file/shattered-1.pdf)
+[Fichier 1  : Collision SHA1 par google ](../file/shattered-1.pdf)
+
+[Fichier 1  : Collision SHA1 par google ](../file/shattered-1.pdf)
 
 
 Retour du site de challenge => Too Easy.
@@ -37,8 +38,9 @@ Les prérequis sont deux jpg < 64Ko
 
 Le site nous renvoie deux pdf :
 
-[Fichier 1  : Collision SHA1 par Beers4Flags ](/file/a.pdf)
-[Fichier 2  : Collision SHA1 par Beers4Flags ](/file/b.pdf)
+[Fichier 1  : Collision SHA1 par Beers4Flags ](../file/a.pdf)
+
+[Fichier 2  : Collision SHA1 par Beers4Flags ](../file/b.pdf)
 
 Nous verifions que nos deux pdf ont bien la même somme SHA1
 
