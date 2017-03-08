@@ -1,4 +1,4 @@
-**OTPCards - 50pts**
+**Crypto - OTPunched - 50pts**
 
 
 ![Alt](img/card1.png "Punched Card 1")
