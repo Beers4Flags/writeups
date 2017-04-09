@@ -1,6 +1,7 @@
 **Misc - Something Strange - 2500**
 
 Un dossier compressé nous est fournis dans l'énoncé du challenge.
+
 Dedans des fichiers :
 
 ```BASH
@@ -9,7 +10,8 @@ fileB  fileE  fileG  fileI  fileL  fileO  fileR  fileV  fileX
 ```
 
 
-Résolution :
+__Résolution :__
+
 On constate une différence sur les dates de modification des fichiers :
 
 ```BASH
