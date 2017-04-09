@@ -1,4 +1,4 @@
-** WEB - Mr President - 2500 **
+**WEB - Mr President - 2500**
 
 Le site mis à disposition est un générateur de texte sur une image de Trump.
 
