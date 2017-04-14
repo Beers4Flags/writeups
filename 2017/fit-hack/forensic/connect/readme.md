@@ -145,6 +145,7 @@ So I extract all images embedded in PNG and above all I see between first images
 
 
 Suddenly I think it is necessary to reconstitute the image with convert from Imagemagick by putting the images one below the other.
+https://www.imagemagick.org/script/command-line-options.php#append
 
 ```BASH
 convert *.png -append output.png
