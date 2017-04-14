@@ -76,9 +76,10 @@ Suddenly I remember the description of the challenge : "Check the color informat
 R = 70
 G = 73
 B = 84
+```
 
 So in decimal (70 73 84) -> hex (46 49 54) -> ascii = FIT
-```
+
 
 This is the only possible track to get the flag, in order to do this I use the product : stegpy
 https://github.com/Baldanos/Stegpy
