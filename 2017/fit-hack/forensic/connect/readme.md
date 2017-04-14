@@ -13,9 +13,13 @@ flag.png: PNG image data, 960 x 5, 8-bit/color RGBA, non-interlaced
 ```
 
 
-When you have a PNG file often your reflex is analyze precisely headers / ..
+When you have a PNG file often your reflex is analyze precisely headers / embedded files /..
 
 ```BASH
+pngcheck flag.png 
+flag.png  additional data after IEND chunk
+ERROR: flag.png
+
 hachoir-subfile flag.png 
 [+] Start search on 84177 bytes (82.2 KB)
 
