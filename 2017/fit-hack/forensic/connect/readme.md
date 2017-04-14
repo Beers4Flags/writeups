@@ -139,6 +139,11 @@ hachoir-subfile flag.png
 Wow wow there is a lot of pictures in flag.png :-)
 So I extract all images embedded in PNG and above all I see between first images and last images : Gray text goes from left to right
 
+![Alt](img/00000006.png "Img1")
+![Alt](img/00000076.png "Img2")
+![Alt](img/00000126.png "Img3")
+
+
 Suddenly I think it is necessary to reconstitute the image with convert from Imagemagick by putting the images one below the other.
 
 ```BASH
