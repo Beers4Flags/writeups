@@ -42,6 +42,7 @@ Software                        : APNG Assembler 2.9
 
 Oki so I used a tool specially for APNG format : apngdis
 ```BASH
+apt-get install apngdis
 apngdis image.png 
 
 APNG Disassembler 2.5
