@@ -138,7 +138,8 @@ hachoir-subfile flag.png
 
 Wow wow there is a lot of pictures in flag.png :-)
 So I extract all images embedded in PNG and above all I see between first images and last images : Gray text goes from left to right
-Sudden I think it is necessary to reconstitute the image
+
+Sudden I think it is necessary to reconstitute the image with convert from Imagemagick by putting the images one below the other.
 
 ```BASH
 convert *.png -append output.png
