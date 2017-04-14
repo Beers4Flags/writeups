@@ -13,7 +13,7 @@ flag.png: PNG image data, 960 x 5, 8-bit/color RGBA, non-interlaced
 ```
 
 
-When you have a PNG file often your reflex is analyze precisely headers / embedded files /..
+When you have a PNG file often your reflex is to analyze precisely headers / embedded files /..
 
 ```BASH
 pngcheck flag.png 
@@ -139,7 +139,7 @@ hachoir-subfile flag.png
 Wow wow there is a lot of pictures in flag.png :-)
 So I extract all images embedded in PNG and above all I see between first images and last images : Gray text goes from left to right
 
-Sudden I think it is necessary to reconstitute the image with convert from Imagemagick by putting the images one below the other.
+Suddenly I think it is necessary to reconstitute the image with convert from Imagemagick by putting the images one below the other.
 
 ```BASH
 convert *.png -append output.png
