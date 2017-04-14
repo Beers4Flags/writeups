@@ -30,7 +30,7 @@ FITGra_N3_P0bl3c5_d3rfuli5_imaphirk_rtat3dtw0w0n{An}
 ```
 
 
-Hum hum It looks great as a flag pattern FIT{...}, but letters seem to mix
+Hum hum It looks great as a flag pattern FIT{...}, but letters seem to be mixed
 
 
 We know too software which used ofr this image :
