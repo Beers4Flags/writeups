@@ -24,7 +24,7 @@ for nb in encrypted:
 	char+=chr(nb^62)
 print char
 ```
-
+YUBITSEC{well_great}
 
 By team Beers4Flags
 
