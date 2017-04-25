@@ -8,7 +8,7 @@ Just find a and b
 Note: Flag format will be YUBITSEC{a,b}
 
 ```
-![Alt](img/crypto.png "crypto")
+![Alt](img/crypto.jpg "crypto")
 
 __Résolution :__
 
