@@ -3,7 +3,7 @@
 Enoncé :
 
 
-[Alt](img/indir.png)
+[Alt](img/indir.png "enonce")
 
 
 __Résolution :__
@@ -11,7 +11,7 @@ __Résolution :__
 En analysant l'image avec stegsolve on remarque un qrcode sur tous les filtres RGB.
 
 
-[Alt](img/solved.bmp)
+[Alt](img/solved.bmp "qrcode")
 
 On upload le qrcode sur ce site :
 [Decode qrcode](https://zxing.org/)
