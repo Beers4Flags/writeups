@@ -6,7 +6,7 @@ Enoncé :
 Shaco is hiding something!
 ```
 
-[Alt](img/lsb.png "lsb")
+![Alt](img/lsb.png "lsb")
 
 
 __Résolution :__

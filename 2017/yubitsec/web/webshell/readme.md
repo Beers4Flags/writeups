@@ -11,7 +11,7 @@ HINT: I think somebody used some commands already but I could not figure how to 
 
 ```
 
-[Alt](img/shell_as_service.png "shell_as_service.png")
+![Alt](img/shell_as_service.png "shell_as_service.png")
 
 
 __Résolution :__

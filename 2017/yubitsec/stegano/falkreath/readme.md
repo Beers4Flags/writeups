@@ -6,7 +6,7 @@ Enoncé :
 What is the music of life?
 ```
 
-[Alt](img/ciceros.jpg "ciceros")
+![Alt](img/ciceros.jpg "ciceros")
 
 
 __Résolution :__
