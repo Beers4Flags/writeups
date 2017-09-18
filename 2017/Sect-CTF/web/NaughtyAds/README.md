@@ -75,6 +75,6 @@ On retrouve la table login avec ses champs name et password, puis on dump les ch
 username --> webmasterofdoom3755
 password -- 5ebe2294ecd0e0f08eab7690d2a6ee69 --> secret
 
-On se connecter à l'interface Admin, puis on rempli le formulaire avec le numéro de téléphone indiqué dans l'énnoncé, le flag est affiché.
+On se connecte à l'interface Admin, puis on rempli le formulaire avec le numéro de téléphone indiqué dans l'énnoncé, le flag est affiché.
 
 SECT{~tr4nsv3stiT3s_w3lc0me_t00~}
