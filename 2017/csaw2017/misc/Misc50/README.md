@@ -8,10 +8,12 @@ categories: wu
 Il s'agit de retrouver à partir d'un envoi de plusieurs bits un suite
 d'octets composant le flag. Les bits envoyés sont
 0 <8 bits de données> parité 1
+
 On reconstitue le message en demandant la reatransmission plusieurs fois et
 en prenant pour chaque bit le bit majoritaire. Ça marche bien.
 
-francois@aramis:~/BFF/beers4flags/writeups/2017/csaw2017/misc/Misc50$ python payload.py 
+francois@aramis:~/BFF/beers4flags/writeups/2017/csaw2017/misc/Misc50$ python payload.py
+```
 [+] Opening connection to misc.chal.csaw.io on port 4239: Done
 0 0 1 1 0 0 1 1 0 0 1 102 f
 0 0 1 1 0 1 1 0 0 0 1 108 fl
@@ -103,3 +105,4 @@ francois@aramis:~/BFF/beers4flags/writeups/2017/csaw2017/misc/Misc50$ python pay
 0 0 1 1 1 0 1 0 0 0 1 116 flag{@n_int3rface_betw33n_data_term1nil_3quipment_and_d@t@_circuit-term1nating_3quipment
 0 0 1 1 1 1 1 0 1 0 1 125 flag{@n_int3rface_betw33n_data_term1nil_3quipment_and_d@t@_circuit-term1nating_3quipment}
 0 0 0 0 0 1 0 1 0 0 1 10 flag{@n_int3rface_betw33n_data_term1nil_3quipment_and_d@t@_circuit-term1nating_3quipment}
+```

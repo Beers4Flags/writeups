@@ -5,6 +5,7 @@ date: 18 Septembre 2017
 comments: true
 categories: wu
 ---
+```
  ===== INFOS ===== 
 Filename                 auir
 File format              ELF64
@@ -20,12 +21,13 @@ Relro                    partial
 RPATH                    no rpath
 RUNPATH                  no runpath
 PIE                      disabled
-
+```
 Le binaire présente plusieurs failles:
 
 1) Un tableau de pointeur vers des zones dans le tas (heap) voit ses entrées
 mises par incrément, toujours accessibles et jamais effacées. Cela permet un
 use after free.
+
 2) la possibilité d'adresser des pointeurs en dehors du tableau (cela s'est
 avérée inutile)
 
@@ -40,7 +42,7 @@ et de le faire pointer vers __free_hook ou on met l'adresse de system.
 
 La destruction d'un zealot s'appelant /bin/sh permet d'obtenir un shell.
 
-
+```
 [*] '/home/francois/BFF/beers4flags/writeups/2017/csaw2017/pwn/auir/auir'
     Arch:     amd64-64-little
     RELRO:    Partial RELRO
@@ -217,3 +219,4 @@ $ exit
 [5]GO HOME
 |-------------------------------|
 >>
+```

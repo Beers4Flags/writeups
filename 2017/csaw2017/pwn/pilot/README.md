@@ -5,7 +5,8 @@ date: 18 Septembre 2017
 comments: true
 categories: wu
 ---
- ===== INFOS ===== 
+```
+===== INFOS ===== 
 Filename                 pilot
 File format              ELF64
 Architecture             x86-64
@@ -20,7 +21,7 @@ Relro                    partial
 RPATH                    no rpath
 RUNPATH                  no runpath
 PIE                      disabled
-
+```
 Le binaire est un binaire avec un buffer overflow simple, la pile est donnée et
 elle est exécutable. On peut juste mettre un nombre limité d'octets. On commence
 donc par le shellcode qui devra commencer par diminuer $rsp afin de ne pas
