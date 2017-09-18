@@ -1,0 +1,2 @@
+#!/bin/sh
+/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2  --library-path /home/francois/BFF/CSAW2017/auir/  /home/francois/BFF/CSAW2017/auir/auir
