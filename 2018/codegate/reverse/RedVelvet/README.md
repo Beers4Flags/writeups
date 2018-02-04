@@ -6,7 +6,6 @@ comments: true
 categories: wu
 auteur: jambon69
 ---
-```
 
 ## RedVelvet
 
