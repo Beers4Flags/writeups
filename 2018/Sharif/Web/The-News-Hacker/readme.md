@@ -20,7 +20,7 @@ wpscan --url http://ctf.sharif.edu:8082 --enumerate u
 ```
 
 **Résultat :**
-
+```
 Deux utilisateurs sont présent sur le système :
    +----+-----------+-----------+
     | Id | Login     | Name      |
