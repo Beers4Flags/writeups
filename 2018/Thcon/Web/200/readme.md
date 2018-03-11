@@ -1,7 +1,6 @@
 **Web - Compromised - 200pts**
 
 
-
 Enoncé :
 ```
 
@@ -11,7 +10,7 @@ On commence avec les sources de l'application web [Sources](sources/sources.zip)
 
 **Résolution :**
 
-La page d'accueil nous demande nous authentifier.
+La page d'accueil nous demande de nous authentifier.
 
 
 Le fichier login.php contient l'authentification suivante :
@@ -44,7 +43,7 @@ On essaye d'accèder au fichier qui contient les comptes utilisateurs sur le ser
 }
 ```
 
-Sans succès après avoir essayer de chercher une correspondance du sha1 , nous sommes aller voir la fonction plus en détail la fonction "hsha1".
+Sans succès après avoir essayer de chercher une correspondance du sha1 , nous sommes aller voir plus en détail la fonction "hsha1".
 
 Contenu du fichier : "base/sha1.php"
 
@@ -147,15 +146,29 @@ On cherche donc un moyen de mettre $z à 10 :
 @sha1x(4, ord($input[$i]), $c, $d) == (movr($i / 4, $c0, $c1, $c2) & 0xff)
 ```
 
-Si on execute la page de login avec un mot de passe de test et que l'on ajoute un var_dump à sur la comparaison (movr($i / 4, $c0, $c1, $c2) & 0xff) , on obtient : 
+Si on execute la page de login avec un mot de passe de test et que l'on affiche **(movr($i / 4, $c0, $c1, $c2) & 0xff)** , on obtient : 
+
+```PHP
+	if ($i < 10) {
+				echo "\n--------------\n";
+				echo (movr($i / 4, $c0, $c1, $c2) & 0xff);
+				echo "\n---------------\n";
+				/*if (@sha1x(4, ord($input[$i]), $c, $d) == (movr($i / 4, $c0, $c1, $c2) & 0xff)) {
+					
+					$z++;
+					var_dump($z);
+				}*/
+				$i++;
+			}
 
 ```
 
+Résultat :
 ```
-Il nous faut trouver pour chaque lettre sa correspondance avec un xor 0x2a.
+81, 72, 30, 73, 65, 78, 1, 1, 88, 87
+```
 
-81,30,30,31,28,29,18,19,27
-
+Il faut xorer chaque résultat avec 0x2a.
 
 
 ```PHP
@@ -170,14 +183,19 @@ case 4:
 >>> import sys
 >>> values = [81, 72, 30, 73, 65, 78, 1, 1, 88, 87]
 >>> for elem in values:
-...     sys.stdout.write(chr(elem ^ 42))
+...     sys.stdout.write(chr(elem ^ 0x2a))
 ... 
 {b4ckd++r}
 ```
 
+Pour se connecter sur la page admin il fallait alors utiliser les identifians :
 
 ```
-Le flag est : SharifCTF{c58a108967c46222bbdc743e15932c26}
+admin / {b4ckd++r}f17c99cf95443a9a8768547fb91377a6da9f2a6e
+```
+
+```
+Le flag est : THC{tata}
 ```
 
 
