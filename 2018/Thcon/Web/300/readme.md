@@ -1,8 +1,12 @@
-**Web - 300pts**
+**Web - Pushup - 300pts**
 
 Enoncé :
 ```
+You like pushups ? Because I like pushups. I found a website about pushups, let's pushup!
 
+https://pushup.thcon.party
+
+HINT Le développeur vient de m'appeler: il m'a dit qu'il était OK pour vous filer le code source du site, il a commit les changements mais il n'a pas push ..
 ```
 
 **Résolution :**

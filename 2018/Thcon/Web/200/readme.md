@@ -3,7 +3,11 @@
 
 Enoncé :
 ```
+The administrator of this website has been hacked multiple times. As a result, they gave the sources of their site and ask users to look for vulns.
 
+https://compromised.thcon.party
+
+WARNING: The flag is given without the surrounding "THC{...}"
 ```
 
 On commence avec les sources de l'application web [Sources](sources/sources.zip)
