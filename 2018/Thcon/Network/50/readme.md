@@ -8,7 +8,7 @@ During the deployment of the challenges of the THC, an attacker was able to dump
 Can you find the flag?
 ```
 
-On commence un fichier dump.pcap [Sources](sources/dump.pcap)
+On commence avec un fichier dump.pcap [Sources](sources/dump.pcap)
 
 **Résolution :**
 
