@@ -228,4 +228,22 @@ Une fois les caractères dans l'ordre et le decimal converti en ascii, on obtien
 ```
 HB7G-KJ6G-BPIG-OHSK!
 ```
-Merci aux organisateurs :)
+Merci aux organisateurs !
+
+By team Beers4Flags
+
+
+```
+ ________
+|        |
+|  #BFF  |
+|________|
+   _.._,_|,_
+  (      |   )
+   ]~,"-.-~~[
+ .=] Beers ([
+ | ])  4   ([
+ '=]) Flags [
+   |:: '    |
+    ~~----~~
+```

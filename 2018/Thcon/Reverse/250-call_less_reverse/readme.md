@@ -224,4 +224,22 @@ Tadaaan...
 flag: THC{Dyn4miqu3_anAlYs1s_FtW}
 ```
 
-Merci aux organisateurs :)
+Merci aux organisateurs !
+
+By team Beers4Flags
+
+
+```
+ ________
+|        |
+|  #BFF  |
+|________|
+   _.._,_|,_
+  (      |   )
+   ]~,"-.-~~[
+ .=] Beers ([
+ | ])  4   ([
+ '=]) Flags [
+   |:: '    |
+    ~~----~~
+```
