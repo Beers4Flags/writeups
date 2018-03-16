@@ -4,7 +4,7 @@
 
 Le challenge contenait un apk nommé « THC.apk ». Le texte qui l'accompagnait disait qu'il fallait trouver le serial pour activer l'application. N'ayant pas sous la main un émulateur android, je me suis lancé directement dans sa décompilation.
 
-## Décompilation de l'apllication
+## Décompilation de l'application
 
 Un APK est une simple archive zip que l'on peut extraire:
 
