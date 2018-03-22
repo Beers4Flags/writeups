@@ -181,7 +181,7 @@ En lisant cette ressource, ​https://www.di.ens.fr/~fouque/ens-rennes/coppersmi
 
 Pour la partie du script, je remercie mon coéquipier francois pour son aide sur la création de ce dernier surtout sur la partie liée à Coppersmith ;-)
 
-Le script est disponible ici [](files/angryssh.sage "script angryssh.sage")
+Le script est disponible ici [angryssh.sage](files/angryssh.sage)
 
 Le résultat nous donne :
 
