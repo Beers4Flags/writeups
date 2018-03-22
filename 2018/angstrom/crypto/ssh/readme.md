@@ -173,7 +173,7 @@ q_ = 0xd0b1593944e0be69d6024c064a8ffa86e40ebbfed59ac33b3817459ed828b4e25700b5c5a
 
 ## Partie attaque sur notre q_ tronqué :
 
-En lisant cette ressource, [Coppersmith.pdf](​https://www.di.ens.fr/~fouque/ens-rennes/coppersmith.pdf)  à la page 19, on en arrive à l'explication suivante :
+En lisant cette ressource, ​https://www.di.ens.fr/~fouque/ens-rennes/coppersmith.pdf  à la page 19, on en arrive à l'explication suivante :
 
 1. À partir de qh, on déduit la début de la factorisation de p, car  abs(n/q_approchée -p)<=p/qh (où q = 2^m*qh + r )
 2. à partir de ces deux parties, via coppersmith, on en déduit p et q: on connait ph et qh, il reste juste à résoudre (2^m*qh + r)*(2^m'*ph + s) =n
