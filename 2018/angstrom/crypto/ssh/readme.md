@@ -48,11 +48,15 @@ echo "AAAAB3NzaC1yc2EAAAADAQABAAABAQC+XZWLCbIpHPC9NlEckVXiKfiujcyu4VUslmm4G1MqNj
 
 Du coup, on détermine facilement notre "n" et notre "e" :
 soit en hexadécimal :
+
 e = 0x10001
+
 n = 0xbe5d958b09b2291cf0bd36511c9155e229f8ae8dccaee1552c9669b81b532a363b4f34769412867ccf92cb40addef5200a05dcdef09c8da30982fa5413d952f4e7db3da739519fab77d574de52366c9603ace887c0cbf32c5247cec14228e8a72aa5256799e54c40f3a22d4642cdaf5e0dd077331158e7d84dba8756d531a4bb4d2ba3e79c29972f27eb8d0bf9df81e2e9cda23b0ddead23c00aaebfa0f5383277a22177729a9cb5ee58c47019b6cb322d7fb9a41df3a2d562dfd202f9063b5e5e5042cfef6ddcfe41232867e1c122a8dcc18ce51efbb8cc5f9bc0f3296f1091ca3010ed851273d4ca40675753da896ae5fcfa01593a7c84d518c503c0aee581
 
 soit en décimal :
+
 e = 65537
+
 n = 24031426009258585415105324998970701655451460140660105245278171650878655493832570145520528674334486553204442446050601099312855866652174529838264749199630546148628121934849433734634042641132125007923761347962489974645002007692970466377879714666376153284839287915500514317384370204031902874952028757660051907008749997171513281852774870171717680368772057416440542176768196388565781131705261355090923059616730128088291078728643698870108958810166348296696671079733506691833466453747784418214869999275238860856569886383373280256273665811649081849561360513128165462438255912304945446909477593597880634673262567888241113884033
 
 
@@ -72,6 +76,7 @@ z9LQUlT6mnzYwFrX4mPPOTY5nvCyjepQlSDA7w49yaRhXKCFRHmEieeFJqzrZoQG
 ```
 
 Il faut aussi savoir à quelle taille de clé privée, nous avons à faire !!!
+
 Mes tests se feront sur 3 tailles standards :
 
 ```BASH
@@ -106,7 +111,8 @@ openssl asn1parse -in test2048.pem
 ```
 
 Les explications plus détaillées :
- 
+
+``̀  
 en 2048 bits :
 n => marqueur:02 82 0, size :101(donc 257)
 e => marqueur:02 , size : 03
@@ -116,6 +122,7 @@ q => marqueur:02 81 , size : 81 (donc 129)
 exp1 => marqueur:02 81 , size : 81 (donc 129)
 exp2 => marqueur:02 81 , size : 81 (donc 129)
 coef => marqueur:02 81 , size : 80 (donc 128)
+```
 
 Du coup, pour déterminer à quel paramètre nous avons à faire, je compare sur ma clé test2048.pem mais tronquée partiellement comme celle du challenge, je la nomme ici test2048_partial.pem.
 
@@ -166,6 +173,7 @@ En lisant cette ressource, [Coppersmith.pdf](​https://www.di.ens.fr/~fouque/en
 
 
 Pour la partie du script, je remercie mon coéquipier francois pour son aide sur la création de ce dernier surtout sur la partie liée à Coppersmith ;-)
+
 Le script est disponible ici ![](files/angryssh.sage "script angryssh.sage")
 
 Le résultat nous donne :
