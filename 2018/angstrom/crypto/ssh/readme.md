@@ -46,7 +46,7 @@ echo "AAAAB3NzaC1yc2EAAAADAQABAAABAQC+XZWLCbIpHPC9NlEckVXiKfiujcyu4VUslmm4G1MqNj
 00000117
 ```
 
-Du coup, on détermine facilement notre "n" et notre "e" :
+Du coup, on détermine facilement notre "**n**" et notre "**e**" :
 soit en hexadécimal :
 
 e = 0x10001
@@ -181,7 +181,7 @@ En lisant cette ressource, ​https://www.di.ens.fr/~fouque/ens-rennes/coppersmi
 
 Pour la partie du script, je remercie mon coéquipier francois pour son aide sur la création de ce dernier surtout sur la partie liée à Coppersmith ;-)
 
-Le script est disponible ici ![](files/angryssh.sage "script angryssh.sage")
+Le script est disponible ici [](files/angryssh.sage "script angryssh.sage")
 
 Le résultat nous donne :
 
