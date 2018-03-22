@@ -145,10 +145,10 @@ echo -n "Gl628D/CUymn/tUK1uint4Ci+V9seKnBXaiDYKURl4P70YDTII35SQ0CgYEAyeDy1Sd/oxN
 00000080  e6 6b 78 e5 92 43 8e 95  91 3f 1c 68 f1 a3 55 a6  |.kx..C...?.h..U.|
 00000090
 ```
-je vois ici "02 81 81 00 c9 e0 f2" soit le début de 00c9e0f2, ce qui correspondait juste au-dessus à :
+je vois ici "**02 81 81** 00 c9 e0 f2" soit le début de 00c9e0f2, ce qui correspondait juste au-dessus à :
 665:d=1  hl=3 l= 129 prim:  INTEGER           :00C9E0F2D5277FA3134631615BBA7F7BDE4B43FA45C1ABC5A95FEE09E1A4A040951F92049F60283B18DC60A0D009C58254674B98FEF5398ACBE69573A20ED47EB97824FA4943FAED9810C0AF1B9DB003F011ED50E66B78E592438E95913F1C68F1A355A6E4682F6D13220C889401CCCAEC4C980408C6FE6F1EC309C124A7F03F79
 
-Verdict : Nous venons de trouver notre "q" de tronquer :
+Verdict : Nous venons de trouver notre **q** de tronquer :
 
 Notre clé privée partielle id_rsa :
 
@@ -167,6 +167,7 @@ echo -n "YC2/ZTbmSZFL9t5Em+ic2ayw0nNUSI6XO7+3tcT9TABzh94t9YLhiDcCgYEA0LFZOUTgvmn
 ```
 
 On voit bien le marqueur **02 81 81** 
+
 q_ = 0xd0b1593944e0be69d6024c064a8ffa86e40ebbfed59ac33b3817459ed828b4e25700b5c5a82793d8f317c9655cf7fe8e6d4663cfd2d05254fa9a7cd8c05ad7e263cf3936399ef0b28dea509520c0ef0e3dc9a4615ca08544798489e78526aceb668406
 
 
