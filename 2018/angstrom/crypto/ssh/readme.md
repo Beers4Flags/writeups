@@ -1,7 +1,7 @@
 # [CTF ANGSTROM] Write-Up - SSH (Crypto, 150)
 
 ## Description :
-In an effort to follow good security practices, defund set up SSH keys for his server, which he connects to at ctf@web.angstromctf.com:3004. kmh11 managed to get the [public key](files/id_rsa.pub) and part of the [private key](files/id_rsa]. Help him ruin defund's life.
+In an effort to follow good security practices, defund set up SSH keys for his server, which he connects to at ctf@web.angstromctf.com:3004. kmh11 managed to get the [public key](files/id_rsa.pub) and part of the [private key](files/id_rsa] . Help him ruin defund's life.
 
 
 ## Partie clé publique :
@@ -103,9 +103,7 @@ openssl asn1parse -in test2048.pem
  
 ```
 
-Les explications plus détaillées :
-
-en 2048 bits :
+Les explications plus détaillées, en 2048 bits :
 
 * n => marqueur:02 82 0, size :101(donc 257)
 * e => marqueur:02 , size : 03
