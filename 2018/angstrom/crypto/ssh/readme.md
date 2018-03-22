@@ -19,7 +19,7 @@ L'explication est ici :
 
 
 ```BASH
-echo "AAAAB3NzaC1yc2EAAAADAQABAAABAQC+XZWLCbIpHPC9NlEckVXiKfiujcyu4VUslmm4G1MqNjtPNHaUEoZ8z5LLQK3e9SAKBdze8JyNowmC+lQT2VL059s9pzlRn6t31XTeUjZslgOs6IfAy/MsUkfOwUIo6KcqpSVnmeVMQPOiLUZCza9eDdB3MxFY59hNuodW1TGku00ro+ecKZcvJ+uNC/nfgeLpzaI7Dd6tI8AKrr+g9Tgyd6Ihd3KanLXuWMRwGbbLMi1/uaQd86LVYt/SAvkGO15eUELP723c/kEjKGfhwSKo3MGM5R77uMxfm8DzKW8QkcowEO2FEnPUykBnV1PaiWrl/PoBWTp8hNUYxQPAruWB" | openssl base64 -d | hd
+echo -n "AAAAB3NzaC1yc2EAAAADAQABAAABAQC+XZWLCbIpHPC9NlEckVXiKfiujcyu4VUslmm4G1MqNjtPNHaUEoZ8z5LLQK3e9SAKBdze8JyNowmC+lQT2VL059s9pzlRn6t31XTeUjZslgOs6IfAy/MsUkfOwUIo6KcqpSVnmeVMQPOiLUZCza9eDdB3MxFY59hNuodW1TGku00ro+ecKZcvJ+uNC/nfgeLpzaI7Dd6tI8AKrr+g9Tgyd6Ihd3KanLXuWMRwGbbLMi1/uaQd86LVYt/SAvkGO15eUELP723c/kEjKGfhwSKo3MGM5R77uMxfm8DzKW8QkcowEO2FEnPUykBnV1PaiWrl/PoBWTp8hNUYxQPAruWB" | openssl base64 -d | hd
 00000000  00 00 00 07 73 73 68 2d  72 73 61 00 00 00 03 01  |....ssh-rsa.....|
 00000010  00 01 00 00 01 01 00 be  5d 95 8b 09 b2 29 1c f0  |........]....)..|
 00000020  bd 36 51 1c 91 55 e2 29  f8 ae 8d cc ae e1 55 2c  |.6Q..U.)......U,|
@@ -105,7 +105,7 @@ openssl asn1parse -in test2048.pem
 
 Les explications plus détaillées, en 2048 bits :
 
-* n => marqueur:02 82 0, size :101(donc 257)
+* n => marqueur:02 82 0, size : 101(donc 257)
 * e => marqueur:02 , size : 03
 * d => marqueur:02 82 0, size : 100 (donc 256)
 * p => marqueur:02 81 , size : 81 (donc 129)
@@ -235,7 +235,7 @@ Saving PEM as privkey.pem
 
 ## The flag :
 
-Avec la clé privée [privkey.pem](files/privkey.pem], nous nous connectons au serveur du challenge :
+Avec la clé privée [private key](files/privkey.pem], nous nous connectons au serveur du challenge :
 
 ```BASH
 ssh ctf@web.angstromctf.com -p 3004 -i privkey.pem
