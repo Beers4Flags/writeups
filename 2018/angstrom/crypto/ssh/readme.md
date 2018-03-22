@@ -11,15 +11,10 @@ Une bonne ressource est disponible ici : ​https://security.stackexchange.com/q
 L'explication est ici :
 
 00 00 00 07             The length in bytes of the next field
-
 73 73 68 2d 72 73 61    The key type (ASCII encoding of "ssh-rsa")
-
 00 00 00 03             The length in bytes of the public exponent
-
 01 00 01                The public exponent (usually 65537, as here)
-
 00 00 01 01             The length in bytes of the modulus (here, 257)
-
 00 c3 a3...             The modulus
 
 
