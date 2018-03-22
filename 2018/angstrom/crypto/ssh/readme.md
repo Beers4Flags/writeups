@@ -6,7 +6,7 @@ In an effort to follow good security practices, defund set up SSH keys for his s
 
 ## Partie clé publique :
 
-Une bonne ressource est disponible ici : [Stackexchange](​https://security.stackexchange.com/questions/42268/how-do-i-get-the-rsa-bit-length-with-the-pubkey-and-openssl)  
+Une bonne ressource est disponible ici : ​https://security.stackexchange.com/questions/42268/how-do-i-get-the-rsa-bit-length-with-the-pubkey-and-openssl  
 
 L'explication est ici :
 
