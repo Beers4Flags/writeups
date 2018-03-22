@@ -1,7 +1,7 @@
 # [CTF ANGSTROM] Write-Up - SSH (Crypto, 150)
 
 ## Description :
-In an effort to follow good security practices, defund set up SSH keys for his server, which he connects to at ctf@web.angstromctf.com:3004. kmh11 managed to get the ![Alt](files/id_rsa.pub "public key") and part of the ![Alt](files/id_rsa "private key"). Help him ruin defund's life.
+In an effort to follow good security practices, defund set up SSH keys for his server, which he connects to at ctf@web.angstromctf.com:3004. kmh11 managed to get the ![](files/id_rsa.pub "public key") and part of the ![](files/id_rsa "private key"). Help him ruin defund's life.
 
 
 ## Partie clé publique :
@@ -9,11 +9,17 @@ In an effort to follow good security practices, defund set up SSH keys for his s
 Une bonne ressource est disponible ici : [Stackexchange](​https://security.stackexchange.com/questions/42268/how-do-i-get-the-rsa-bit-length-with-the-pubkey-and-openssl)  
 
 L'explication est ici :
+
 00 00 00 07             The length in bytes of the next field
+
 73 73 68 2d 72 73 61    The key type (ASCII encoding of "ssh-rsa")
+
 00 00 00 03             The length in bytes of the public exponent
+
 01 00 01                The public exponent (usually 65537, as here)
+
 00 00 01 01             The length in bytes of the modulus (here, 257)
+
 00 c3 a3...             The modulus
 
 
