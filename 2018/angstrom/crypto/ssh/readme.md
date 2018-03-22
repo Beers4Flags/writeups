@@ -1,7 +1,7 @@
 # [CTF ANGSTROM] Write-Up - SSH (Crypto, 150)
 
 ## Description :
-In an effort to follow good security practices, defund set up SSH keys for his server, which he connects to at ctf@web.angstromctf.com:3004. kmh11 managed to get the ![](files/id_rsa.pub "public key") and part of the ![](files/id_rsa "private key"). Help him ruin defund's life.
+In an effort to follow good security practices, defund set up SSH keys for his server, which he connects to at ctf@web.angstromctf.com:3004. kmh11 managed to get the public key files/id_rsa.pub and part of the private key files/id_rsa. Help him ruin defund's life.
 
 
 ## Partie clé publique :
@@ -264,7 +264,7 @@ actf{ssh_keys_not_broken_enough}
 Connection to web.angstromctf.com closed.
 ```
 
-Le flag est : actf{ssh_keys_not_broken_enough}
+Le flag est : **actf{ssh_keys_not_broken_enough}**
 
 
 By team Beers4Flags
