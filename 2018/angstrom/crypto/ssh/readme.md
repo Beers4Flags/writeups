@@ -1,7 +1,7 @@
 # [CTF ANGSTROM] Write-Up - SSH (Crypto, 150)
 
 ## Description :
-In an effort to follow good security practices, defund set up SSH keys for his server, which he connects to at ctf@web.angstromctf.com:3004. kmh11 managed to get the [public key](files/id_rsa.pub) and part of the [private key](files/id_rsa] . Help him ruin defund's life.
+In an effort to follow good security practices, defund set up SSH keys for his server, which he connects to at ctf@web.angstromctf.com:3004. kmh11 managed to get the [public key](files/id_rsa.pub) and part of the [private key](files/id_rsa) . Help him ruin defund's life.
 
 
 ## Partie clé publique :
@@ -235,7 +235,7 @@ Saving PEM as privkey.pem
 
 ## The flag :
 
-Avec la clé privée [private key](files/privkey.pem], nous nous connectons au serveur du challenge :
+Avec la clé privée [private key](files/privkey.pem), nous nous connectons au serveur du challenge :
 
 ```BASH
 ssh ctf@web.angstromctf.com -p 3004 -i privkey.pem
