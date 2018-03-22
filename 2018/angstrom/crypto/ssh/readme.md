@@ -41,7 +41,7 @@ echo "AAAAB3NzaC1yc2EAAAADAQABAAABAQC+XZWLCbIpHPC9NlEckVXiKfiujcyu4VUslmm4G1MqNj
 00000117
 ```
 
-Du coup, on détermine facilement notre "**n**" et notre "**e**" :
+Du coup, on détermine facilement notre **n** et notre **e** :
 soit en hexadécimal :
 
 * e = 0x10001
