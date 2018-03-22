@@ -112,17 +112,23 @@ openssl asn1parse -in test2048.pem
 
 Les explications plus détaillées :
 
-``̀  
 en 2048 bits :
+
 n => marqueur:02 82 0, size :101(donc 257)
+
 e => marqueur:02 , size : 03
+
 d => marqueur:02 82 0, size : 100 (donc 256)
+
 p => marqueur:02 81 , size : 81 (donc 129)
+
 q => marqueur:02 81 , size : 81 (donc 129)
+
 exp1 => marqueur:02 81 , size : 81 (donc 129)
+
 exp2 => marqueur:02 81 , size : 81 (donc 129)
+
 coef => marqueur:02 81 , size : 80 (donc 128)
-```
 
 Du coup, pour déterminer à quel paramètre nous avons à faire, je compare sur ma clé test2048.pem mais tronquée partiellement comme celle du challenge, je la nomme ici test2048_partial.pem.
 
