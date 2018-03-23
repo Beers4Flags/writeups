@@ -1,4 +1,4 @@
-# Angstorm - CTF writeup - misc - paste palooza - 150 pts
+# Angstrom - CTF writeup - misc - paste palooza - 150 pts
 - Ici on a droit à un programme en [elixir](https://elixir-lang.org/).
 - En regardant les [sources](src/pastepalooza/redacted), on voit vite notre but à atteindre dans le fichier [mix.exs](src/pastepalooza/redacted/mix.exs)
 ```

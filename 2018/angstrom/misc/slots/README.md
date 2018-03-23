@@ -1,4 +1,4 @@
-# Angstorm - CTF writeup - misc - slots - 90 pts
+# Angstrom - CTF writeup - misc - slots - 90 pts
 
 - Il s'agit ici d'une application de machine à sous.
 - Le code source est fourni : [slots.py](src/slots.py)
@@ -28,7 +28,7 @@ You have $9.30.
 ```
 
 - La seule donnée utilisable est la valeur de bet.
-- Si on regarde en détail l'application, on se rend compte que l'on n'a aucune chances de gagner car la ligne deux est recalculée tant que l'on obtient une valeur de payout.
+- Si on regarde en détail l'application, on se rend compte que l'on n'a aucune chance de gagner car la ligne deux est recalculée tant que l'on obtient une valeur de payout.
 
 ```python
 line1 = line()

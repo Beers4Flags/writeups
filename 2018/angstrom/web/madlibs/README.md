@@ -1,4 +1,4 @@
-# Angstorm - CTF writeup - MADLIBS - 120 pts
+# Angstrom - CTF writeup - MADLIBS - 120 pts
 
 - On se retrouve avec une page web dans laquelle on peut saisir des données en fonction d'un template.
 ![img/screen1.png](img/screen1.png)

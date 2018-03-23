@@ -1,4 +1,4 @@
-# Angstorm - CTF writeup - MD5 - 140 pts
+# Angstrom - CTF writeup - MD5 - 140 pts
 
 - Le chall consiste en un formulaire  qui doit comparer deux string qui une fois hashé en md5 doivent donner la même valeur :
 
