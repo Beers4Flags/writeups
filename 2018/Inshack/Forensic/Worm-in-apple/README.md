@@ -1,4 +1,4 @@
-** Forensics - Worm in Apple **
+**Forensics - Worm in Apple**
 
 Enoncé
 
@@ -13,7 +13,7 @@ Investigate as far as you can.
 ```
 
 
-On commence avec le plugin de Sublim Text 3 [Sources](source/DoxyDoxygen.sublime-package)
+On commence avec le plugin de Sublim Text 3 : [Sources](source/DoxyDoxygen.sublime-package)
 
 Le contenu du fichier est le suivant :
 
@@ -35,7 +35,7 @@ Doxygen.tmPreferences             package-metadata.json
 ```
 
 
-On récupère le plugin officiel pour comparer avec la version fournie : https://github.com/20Tauri/DoxyDoxygen/releases
+On récupère le plugin officiel pour le comparer avec la version fournie : https://github.com/20Tauri/DoxyDoxygen/releases
 
 ```BASH
 diff origin/ officiel/
