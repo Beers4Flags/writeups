@@ -46,6 +46,14 @@ def baseN(num,b,nb=8,sg=0):
                 nb=nb-1
         return ss+s
 
+def bword(t):
+    p=1
+    s=0
+    for i in range(8):
+        s=s+ord(t[i])*p
+        p=p*256
+    return(s)
+
 def dump(debut,buffer):
     l=0
     s=''
@@ -65,27 +73,6 @@ def dump(debut,buffer):
             print " ",s
             s=""
     print " ",s
-def word(t):
-    p=1
-    s=0
-    for i in range(4):
-        s=s+ord(t[i])*p
-        p=p*256
-    return(s)
-
-def bword(t):
-    p=1
-    s=0
-    for i in range(8):
-        s=s+ord(t[i])*p
-        p=p*256
-    return(s)
-
-def complete(t,l,c="\x00"):
-    if (len(t)< l):
-        return(t+(l-len(t))*c)
-    else:
-        return(t)
 
 
 def dumpg(debut,buffer):
@@ -103,120 +90,7 @@ def dumpg(debut,buffer):
         if (l % 16 == 0):
             print " ",""
     print " "
-def dumpgc(debut,buffer):
-    l=0
-    s=''
-    while (l<len(buffer)):
-        if (l %8 == 0):
-            print(baseN(debut+l,16,16)+" : "),
-        print baseN(bword(buffer[l:min(l+16,len(buffer))]),16,16)
-        l=l+8
-#        s=s+toprint(buffer[l])
-    print " "
 
-def liremem(debut,longueur):
-    l=0
-    buffer=""
-    while (l<longueur):
-        readbuffer=getzone(debut+l)
-        if (readbuffer[0:6]=="(null)"):
-            readbuffer=""
-        str=readbuffer
-        str=str+"\x00"
-        buffer=buffer+str
-        l=l+len(str)
-    return(buffer)
-# routine de format
-
-def strl(n,l=5):
-    s=str(n)
-    s="0"*max(0,l-len(s))+s
-    return(s)
-
-def fmt(x):
-    if (x < 8):
-        return("A"*x)
-    return("%"+str(x)+"x")
-
-
-def lchaine(lwhat,offset,nb=4):
-    lnom=[]
-    o=0
-    for w in lwhat:
-        w1=w&0xffff
-        o1=o
-        o=o+1
-        w2=w >> 16
-        if (w2 !=0):
-            o2=o
-            o=o+1
-            lnom=lnom+[(w1,o1),(w2,o2)]
-        else:
-            lnom=lnom+[(w1,o1)]
-    lnom.sort()
-    lf=[]
-    ind=0
-    lg=0
-    hn="$hn"
-    for c in lnom:
-        fm=fmt(c[0]-ind)+"%"
-        lf=lf+[(fm,c[1])]
-        ind=c[0]
-        lg=lg+len(fm)+len(str(baseN(offset,10,2)))+len(hn)
-    finnom='A'*((nb-(lg % nb)) % nb)
-    lg=lg+len(finnom)
-    indice=offset+(lg/nb)
-    nom=""
-    for f in lf:
-        nom=nom+f[0]+str(baseN(indice+f[1],10,2))+hn
-    nom=nom+finnom
-    print nom
-    return(nom)
-
-def lchaineverif(lwhat,offset,nb=4):
-    if (nb==4):
-        vv='8x'
-    else:
-        vv='lx'
-    lnom=[]
-    o=0
-    for w in lwhat:
-        w1=w&0xffff
-        o1=o
-        o=o+1
-        w2=w >> 16
-        if (w2 !=0):
-            o2=o
-            o=o+1
-            lnom=lnom+[(w1,o1),(w2,o2)]
-        else:
-            lnom=lnom+[(w1,o1)]
-    lnom.sort()
-    lf=[]
-    ind=0
-    lg=0
-    hn="$"+vv
-    for c in lnom:
-        fm="F"*len(fmt(c[0]-ind))+"%"
-        lf=lf+[(fm,c[1])]
-        ind=c[0]
-        lg=lg+len(fm)+len(str(baseN(offset,10,2)))+len(hn)
-    finnom='A'*((nb-(lg % nb)) % nb)
-    lg=lg+len(finnom)
-    indice=offset+(lg/nb)
-    nom=""
-    for f in lf:
-        nom=nom+f[0]+str(baseN(indice+f[1],10,2))+hn
-    nom=nom+finnom
-    print nom
-    return(nom)
-
-debug=1
-
-def pdebug(s):
-    if (debug==1):
-        print s
-    return(s)
 
 def tolibc(s):
     return(libc.sym[s]-libc.sym[reference_libc]+adr_reference_libc)
@@ -224,55 +98,6 @@ def tolibc(s):
 def whatis(s):
     print s," = ",hex(tolibc(s))
 
-
-############
-
-def lire():
-    r=p.recvuntil("\n //")
-#    print r
-    i=r.index("\n             //")
-    r=r[i+len("\n             //"):]
-    j=r.index("\n            //")
-    return(r[:j])
-
-def lireoffset(i):
-    p.send("%"+str(i)+"$08x\n")
-    time.sleep(TIME)
-    b=lire()
-    return(b[0:8])
-
-
-def lireptroffset(i):
-    global p
-    p.send("%"+str(i)+"$s\n")
-    time.sleep(TIME)
-    try:
-        b=lire()
-        b=b[:b.index('                              /')]
-    except:
-        b="ERREUR"
-        p.close()
-        p=remote(host,port)
-    return(b)
-
-
-def getzone(a):
-    p.sendline(p32(a)+"%7$s")
-    b=lire()
-    return(b)
-
-def liremem(debut,longueur):
-    l=0
-    buffer=""
-    while (l<longueur):
-        readbuffer=getzone(debut+l)
-        if (readbuffer[0:6]=="(null)"):
-            readbuffer=""
-        str=readbuffer
-        str=str+"\x00"
-        buffer=buffer+str
-        l=l+len(str)
-    return(buffer)
 
 
 def waitmenu():

