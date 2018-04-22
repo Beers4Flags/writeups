@@ -30,7 +30,7 @@ Il y a tout d'abord un gros travail de reverse dans ce programme.
 
 ci <-> di = [c(i+1).....c(n)c(1)...c(i-1)]
 
-* Il trie les di, qui donnent une chaine d(i1),d(i2),...,d(in)
+* Il trie les di, qui donne d(i1),d(i2),...,d(in) associé à un ordre c(i1)...c(in)
 * Il est donc relativement facile d'obtenir un classement final voulu aux premières lettres près.
 
 La chaine 
@@ -47,14 +47,15 @@ Ainsi pour avoir GLOP, il suffit d'envoyer
 
 "PPPP\x00" puis "OOO\x00" puis "LL\x00" puis "G\x00"
 
-J'ai préféré envoyer la chaine ce dessus puis compltée les 4 premiers caractères
+J'ai préféré envoyer la chaine ce dessus puis compléter les 4 premiers caractères
 par cette dernière méthode.
 
-Bon, donc on peut sortir du programme.
+Bon, donc on peut sortir du programme par cette méthode.
 
-Un buffer overflow est possible de manière assez grossière mais un canari existe.
-Cependant ce canari est facile à retrouver, une fuite a lieu pour des chaines
-envoyées de longueur >= 1023.
+Un buffer overflow est possible de manière assez grossière (on envoit une 
+chaine, puis \x00 et une suite qui écrase la pile à partir du 1024ième caractère)
+mais un canari existe. Cependant ce canari est facile à retrouver, une fuite a lieu
+pour des chaines envoyées de longueur >= 1023.
 
 On procède donc de la façon suivante:
 
