@@ -52,4 +52,22 @@ curl "http://89.38.210.129:8012/books/booklist.php?f=....//....//w0w_y0u_g0t_m3_
 
 - Flag \o/
 
-- Demo here : [![asciicast](https://asciinema.org/a/8Sw5A1kr088QRstaQ7VSLuHGZ.png)](https://asciinema.org/a/8Sw5A1kr088QRstaQ7VSLuHGZ?speed=2)  
+- Demo here : [![asciicast](https://asciinema.org/a/8Sw5A1kr088QRstaQ7VSLuHGZ.png)](https://asciinema.org/a/8Sw5A1kr088QRstaQ7VSLuHGZ?speed=2)
+
+
+- By team Beers4Flags
+
+```
+ ________
+|        |
+|  #BFF  |
+|________|
+   _.._,_|,_
+  (      |   )
+   ]~,"-.-~~[
+ .=] Beers ([
+ | ])  4   ([
+ '=]) Flags [
+   |:: '    |
+    ~~----~~
+```
