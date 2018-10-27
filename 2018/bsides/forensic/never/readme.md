@@ -25,7 +25,7 @@ INFO    : volatility.debug    : Determining profile based on KDBG search...
       Image local date and time : 2018-10-23 14:00:51 +0530
 ```
 
-First the initials of the title indicate NTLM, so other write-ups I use mimikatz plugin
+First, the initials of the title indicate NTLM, like other write-ups I use mimikatz plugin
 
 ```BASH
 vol.py -f Challenge.raw --profile=Win7SP1x86 mimikatz
@@ -40,7 +40,8 @@ So I find the first part of the flag.
 
 ## Tricks via volatility :
 
-I test differents plugins as pslist / cmdscan / consoles
+I test differents plugins such as pslist / cmdscan / consoles
+
 ```BASH
 vol.py -f Challenge.raw  --profile=Win7SP1x86 consoles
 Volatility Foundation Volatility Framework 2.6
