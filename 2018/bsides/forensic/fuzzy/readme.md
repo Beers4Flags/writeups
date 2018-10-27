@@ -138,6 +138,26 @@ I recap I have in my possession :
 
 You can go on : https://sela.io/pgp/
 
+Otherwise you can too use *gpg* command
+
+```BASH
+gpg --allow-secret-key-import --import private.gpg 
+gpg: clef C7D73FEDF67F2BE2 : « kartik997@gmail.com » n'est pas modifiée
+gpg: clef C7D73FEDF67F2BE2 : clef secrète importée
+gpg:       Quantité totale traitée : 1
+gpg:                 non modifiées : 1
+gpg:           clefs secrètes lues : 1
+gpg:  clefs secrètes non modifiées : 1
+
+gpg --list-keys
+pub   rsa2048 2018-10-23 [SCEA]
+      DB709384389B9568305D3577C7D73FEDF67F2BE2
+uid          [ inconnue] kartik997@gmail.com
+
+gpg --batch --yes --passphrase="helloworld" --pinentry-mode loopback -o flag.txt -d message.gpg
+
+```
+
 The flag is : **flag{eNcryP7!ng_t0_PgP_1s_r34LLy_Pre3tY_g00D_pr1V4cY}**
 
 
