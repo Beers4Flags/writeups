@@ -74,6 +74,8 @@ Endly we can see the end header from PNG image :
 
 I can recover all the values in hex with [hex_png.log](files/hex_png.log)
 
+I replace of course all **OO** by **xx** values in order to replace more easily via *sed* command
+
 ```BASH
 cat hex_png.log | awk '{print $2 $3 $4 $5 $6 $7 $8 $9 $10 $11 $12 $13 $14 $15 $16 $17}' | tr -d '\n' | sed -e 's/x//g' | xxd -r -p > img.png
 file img.png 
