@@ -1,4 +1,4 @@
-# [CTF BSIDES] Write-Up - FuzzY  (Forensics)
+# [CTF BSIDES] Write-Up - FuzzY (Forensics)
 
 ## Description :
 Bob and Charlie were sending some messages among themselves,and I planned to intercept their messages and get something out of it, however, they are clever enough that no secret gets leaked. Please help me out to get the secret!!
@@ -53,23 +53,23 @@ Oh there is a PNG image however *binwalk* or *foremost* are not able to recover 
 
 I can do a *string* in Wireshark
 
-The image is interesting for : [fuzzy_dns_filter01.png](files/fuzzy_dns_filter01.png) 
+The image is interesting for : ![Alt](files/fuzzy_dns_filter01.png) 
 
 1. I can parse hexadecimal for PNG header (89 50 4e 47)
 2. I can see result in hexadecimal  
 3. I can see PNG / IHDR / IDAT 
 
-So I can filter only such as [fuzzy_dns_filter02.png](files/fuzzy_dns_filter02.png)
+So I can filter only such as ![Alt](files/fuzzy_dns_filter02.png)
 
 1. The filter in Wireshark *dns && ip.src==192.168.42.129*
 2. The hidden data is always begin in *00e0* position
 3. The hidden data is always finish in *01e0*
 
 Endly we can see the end header from PNG image :
-[fuzzy_dns_filter03.png](files/fuzzy_dns_filter03.png)
+![Alt](files/fuzzy_dns_filter03.png)
 
 
-I can recover all values in hex such as [hex_png.log](files/hex_png.log)
+I can recover all values in hex such as ![Alt](files/hex_png.log)
 
 ```BASH
 cat hex_png.log | awk '{print $2 $3 $4 $5 $6 $7 $8 $9 $10 $11 $12 $13 $14 $15 $16 $17}' | tr -d '\n' | sed -e 's/x//g' | xxd -r -p > img.png
@@ -78,7 +78,7 @@ img.png: PNG image data, 200 x 200, 8-bit/color RGBA, non-interlaced
 ```
 
 Nice the file is now a beautiful qrcode
-[img.png](files/img.png)
+![Alt](files/img.png)
 
 ```BASH
 zbarimg img.png 
