@@ -70,7 +70,6 @@ Volatility Foundation Volatility Framework 2.6
 
 Nice the file seems possible to be recover
 
-Je vois que le binaire est stocké dans le $HOME de l'utilisateur panda, j'essaye donc de voir si le fichier est récupérable via son inode :
 ```BASH
 vol.py -f Challenge.raw  --profile=Win7SP1x86 dumpfiles -Q 0x000000003d4d1dc8 -D files
 Volatility Foundation Volatility Framework 2.6
