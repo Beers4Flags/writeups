@@ -78,8 +78,10 @@ DataSectionObject 0x3d4d1dc8   None \Device\HarddiskVolume2\Users\hello\Desktop\
 
 Shit, it's not possible !!!
 
-However there is another possibility to recover it. Here is a good resource : https://www.csitech.co.uk/recreating-files-from-the-volatility-mft-parser/
+However there is another possibility to recover it. 
+Here is a good resource : https://www.csitech.co.uk/recreating-files-from-the-volatility-mft-parser/
 
+It is possible to recreate the file via MFT parser
 
 ```BASH
 vol.py -f Challenge.raw --profile=Win7SP1x86 mftparser | grep -C 20 "demon.py.txt"
