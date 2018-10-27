@@ -60,7 +60,7 @@ C:\Users\hello>C:\Python27\python.exe C:\Users\hello\Desktop\demon.py.txt
 335d366f5d6031767631707f
 ```
 
-Hum interesting the "demon.py.txt" file so I'm trying to get it back ...
+Hum interesting the **demon.py.txt** file so I'm trying to get it back ...
 
 ```BASH
 vol.py -f Challenge.raw  --profile=Win7SP1x86 filescan |grep "demon.py.txt"
