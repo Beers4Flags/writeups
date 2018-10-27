@@ -53,13 +53,15 @@ Oh there is a PNG image however *binwalk* or *foremost* are not able to recover 
 
 I can do a *string* in Wireshark
 
-The image is interesting for : ![Alt](files/fuzzy_dns_filter01.png) 
+The image is interesting for : 
+![Alt](files/fuzzy_dns_filter01.png) 
 
 1. I can parse hexadecimal for PNG header (89 50 4e 47)
 2. I can see result in hexadecimal  
 3. I can see PNG / IHDR / IDAT 
 
-So I can filter only such as 
+So I can filter only such as :
+
 ![Alt](files/fuzzy_dns_filter02.png)
 
 1. The filter in Wireshark *dns && ip.src==192.168.42.129*
