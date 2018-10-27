@@ -13,7 +13,7 @@ Volatility Foundation Volatility Framework 2.6
 INFO    : volatility.debug    : Determining profile based on KDBG search...
            Suggested Profile(s) : Win7SP1x86_23418, Win7SP0x86, Win7SP1x86
                       AS Layer1 : IA32PagedMemoryPae (Kernel AS)
-                      AS Layer2 : FileAddressSpace (/media/sf_Téléchargements/tests_challs/bsides/Challenge.raw)
+                      AS Layer2 : FileAddressSpace (bsides/Challenge.raw)
                        PAE type : PAE
                             DTB : 0x185000L
                            KDBG : 0x8273cb78L
