@@ -59,7 +59,8 @@ The image is interesting for : ![Alt](files/fuzzy_dns_filter01.png)
 2. I can see result in hexadecimal  
 3. I can see PNG / IHDR / IDAT 
 
-So I can filter only such as ![Alt](files/fuzzy_dns_filter02.png)
+So I can filter only such as 
+![Alt](files/fuzzy_dns_filter02.png)
 
 1. The filter in Wireshark *dns && ip.src==192.168.42.129*
 2. The hidden data is always begin in *00e0* position
@@ -69,7 +70,7 @@ Endly we can see the end header from PNG image :
 ![Alt](files/fuzzy_dns_filter03.png)
 
 
-I can recover all values in hex such as ![Alt](files/hex_png.log)
+I can recover all values in hex such as [hex_png.log](files/hex_png.log)
 
 ```BASH
 cat hex_png.log | awk '{print $2 $3 $4 $5 $6 $7 $8 $9 $10 $11 $12 $13 $14 $15 $16 $17}' | tr -d '\n' | sed -e 's/x//g' | xxd -r -p > img.png
